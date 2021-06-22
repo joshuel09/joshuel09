@@ -45,8 +45,6 @@
             </td>
             <td><img alt="AngularJS" title="AngularJS" height="28px"
                         src="https://angular.io/assets/images/logos/angularjs/AngularJS-Shield.svg" /></td>
-        </tr>
-        <tr>
             <td><a href="#"><img alt="Laravel" title="Laravel" height="28px"
                         src="https://cdn.worldvectorlogo.com/logos/laravel-1.svg" /></a>
             </td>
@@ -60,6 +58,8 @@
             <td><a href="#"><img alt="Postman" title="Postman" height="28px"
                         src="https://www.onespan.com//sites/default/files/blog/images/logo-glyph.png" /></a>
             </td>
+        </tr>
+        <tr>
             <td><a href="#"><img alt="NodeJS" title="NodeJS" height="28px"
                         src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/nodejs/nodejs.png" /></a>
             </td>
@@ -73,8 +73,6 @@
             <td><a href="#"><img alt="GitHub" title="GitHub" height="28px"
                         src="https://i.imgur.com/DZgetVv.png" /></a>
             </td>
-        </tr>
-        <tr>
             <td><a href="#"><img alt="Terminal" title="Terminal" height="28px"
                         src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/terminal/terminal.png" /></a>
             </td>
