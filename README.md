@@ -34,8 +34,6 @@
             <td><a href="#"><img alt="Python" title="Python" height="28px"
                         src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/python/python.png" /></a>
             </td>
-        </tr>
-        <tr>
             <td><a href="#"><img alt="C++" title="C++" height="28px"
                         src="https://img.icons8.com/color/48/000000/c-plus-plus-logo.png" /></a></td>
             <td><a href="#"><img alt="C#" title="C#" height="28px"
@@ -62,8 +60,6 @@
             <td><a href="#"><img alt="Postman" title="Postman" height="28px"
                         src="https://www.onespan.com//sites/default/files/blog/images/logo-glyph.png" /></a>
             </td>
-        </tr>
-        <tr>
             <td><a href="#"><img alt="NodeJS" title="NodeJS" height="28px"
                         src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/nodejs/nodejs.png" /></a>
             </td>
@@ -90,8 +86,6 @@
                         src="https://mk0futurumreseabr7pm.kinstacdn.com/wp-content/uploads/2020/01/aws-logo.png" /></a></td>
             <td><a href="https://brave.com/eyl243"><img alt="Brave" title="Brave" height="28px"
                         src="https://i.imgur.com/UfBWFbP.png" /></a></td>
-        </tr>
-         <tr>
             <td><a href="#"><img alt="Adobe Illustrator" title="Adobe Illustrator" height="28px"
                         src="https://i.pinimg.com/originals/a3/49/ec/a349ecfe9ee669325b7574b45db4d6d8.png" /></a>
             </td>
