@@ -9,7 +9,7 @@
 ## 📖 About me
 
 * 💻 I'm a full stack engineer.
-* 🎨 I'm a self-taught UI designer.
+* 🎨 I'm a self-taught UI/UX designer.
 * 📱 I make Web Apps , Mobile Apps, etc..
 * 🎓 I'm a Computer Science graduate.
 * 💼 I'm currently working as Fullstack Engineer in Japan.
