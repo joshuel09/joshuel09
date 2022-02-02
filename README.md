@@ -2,17 +2,17 @@
 
 <h5 align="right" >Josusama™</h5>
 
-<h3 align="center">こんにちは, 僕はジョシュエルと申します、ジョシュと言います。 <br>　 僕のリポジトリへようこそ！　<img src="https://media.giphy.com/media/hvRJCLFzcasrR4ia7z/giphy.gif" width="28"> <img src="https://emojis.slackmojis.com/emojis/images/1531849430/4246/blob-sunglasses.gif?1531849430" width="28"/></h3>
+<h3 align="center">こんにちは, 僕はジョシュエルと申します、ジョシュと言います。 <br>　 僕のリポジトリの一覧へようこそ！　<img src="https://media.giphy.com/media/hvRJCLFzcasrR4ia7z/giphy.gif" width="28"> <img src="https://emojis.slackmojis.com/emojis/images/1531849430/4246/blob-sunglasses.gif?1531849430" width="28"/></h3>
 
 <div class="row">
 
 ## 📖 About me
 
-* 💻 I'm a full stack engineer.
+* 💻 I'm a full stack system engineer.
 * 🎨 I'm a self-taught UI/UX designer.
 * 📱 I make Web Apps , Mobile Apps, etc..
 * 🎓 I'm a Computer Science graduate.
-* 💼 I'm currently working as Fullstack Engineer in Japan.
+* 💼 I'm currently working as full stack system engineer in Japan.
 
 ## 👨‍💻 Languages and Technologies:
 
