@@ -14,7 +14,7 @@
 * 🎓 I'm a Computer Science graduate.
 * 💼 I'm currently working as full stack system engineer in Japan.
 
-## 👨‍💻 Languages and Technologies:
+## 👨‍💻 Stacks(Languages and Technologies):
 
 <table>
     <tbody>
