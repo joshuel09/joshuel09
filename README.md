@@ -82,8 +82,8 @@
                         src="https://i.imgur.com/6nJGNMN.png" /></a></td>
             <td><a href="#"><img alt="AWS" title="AWS" height="28px"
                         src="https://mk0futurumreseabr7pm.kinstacdn.com/wp-content/uploads/2020/01/aws-logo.png" /></a></td>
-            <td><a href="https://brave.com/eyl243"><img alt="Brave" title="Brave" height="28px"
-                        src="https://i.imgur.com/UfBWFbP.png" /></a></td>
+            <td><a href="#"><img alt="Brave" title="React & React Native" height="28px"
+                        src="https://w7.pngwing.com/pngs/79/518/png-transparent-js-react-js-logo-react-react-native-logos-icon-thumbnail.png" /></a></td>
             <td><a href="#"><img alt="Adobe Illustrator" title="Adobe Illustrator" height="28px"
                         src="https://i.pinimg.com/originals/a3/49/ec/a349ecfe9ee669325b7574b45db4d6d8.png" /></a>
             </td>
