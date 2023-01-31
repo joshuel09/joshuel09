@@ -67,7 +67,7 @@
                         src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/sql/sql.png" /></a>
             </td>
             <td><a href="#"><img alt="Firebase" title="Firebase" height="28px"
-                        src="https://assets.stickpng.com/images/5847f40ecef1014c0b5e488a.png" /></a></td>
+                        src="https://brandslogos.com/wp-content/uploads/thumbs/firebase-logo-vector.svg" /></a></td>
             <td><a href="#"><img alt="TensorFlow" title="TensorFlow" height="28px"
                         src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Tensorflow_logo.svg/957px-Tensorflow_logo.svg.png" /></a></td>
             <td><a href="#"><img alt="GitHub" title="GitHub" height="28px"
