@@ -70,11 +70,11 @@
                         src="https://brandslogos.com/wp-content/uploads/thumbs/firebase-logo-vector.svg" /></a></td>
             <td><a href="#"><img alt="TensorFlow" title="TensorFlow" height="28px"
                         src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Tensorflow_logo.svg/957px-Tensorflow_logo.svg.png" /></a></td>
-            <td><a href="#"><img alt="GitHub" title="GitHub" height="28px"
-                        src="https://i.imgur.com/DZgetVv.png" /></a>
+            <td><a href="#"><img alt="Docker" title="Docker" height="28px"
+                        src="https://cdn-icons-png.flaticon.com/512/5969/5969059.png" /></a>
             </td>
-            <td><a href="#"><img alt="Terminal" title="Terminal" height="28px"
-                        src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/terminal/terminal.png" /></a>
+            <td><a href="#"><img alt="ChatGPT" title="ChatGPT" height="28px"
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/ChatGPT_logo.svg/800px-ChatGPT_logo.svg.png" /></a>
             </td>
             <td><a href="#"><img alt="Visual Studio" title="Visual Studio Code" height="28px"
                         src="https://img.icons8.com/fluent/48/000000/visual-studio-code-2019.png" /></a></td>
