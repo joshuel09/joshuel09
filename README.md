@@ -38,8 +38,8 @@
                         src="https://img.icons8.com/color/48/000000/c-plus-plus-logo.png" /></a></td>
             <td><a href="#"><img alt="C#" title="C#" height="28px"
                         src="https://img.icons8.com/color/48/000000/c-sharp-logo.png" /></a></td>
-            <td><a href="#"><img alt="Java" title="Java" height="28px"
-                        src="https://img.icons8.com/color/48/000000/java-coffee-cup-logo.png" /></a></td>
+            <td><a href="#"><img alt="Nextjs" title="Nextjs" height="28px"
+                        src="https://seeklogo.com/images/N/next-js-icon-logo-EE302D5DBD-seeklogo.com.png" /></a></td>
             <td><a href="#"><a href="#"><img alt="Vue" title="Vue" height="28px"
                         src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Vue.js_Logo_2.svg/1200px-Vue.js_Logo_2.svg.png" /></a></a>
             </td>
