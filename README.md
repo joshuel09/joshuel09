@@ -48,8 +48,8 @@
             <td><a href="#"><img alt="Laravel" title="Laravel" height="28px"
                         src="https://cdn.worldvectorlogo.com/logos/laravel-1.svg" /></a>
             </td>
-            <td><a href="#"><img alt="CodeIgniter" title="CodeIgniter" height="28px"
-                        src="https://www.joykal.com/wp-content/uploads/2019/09/codeigniter-icon-512.png" /></a>
+            <td><a href="#"><img alt="Redis" title="Redis" height="28px"
+                        src="https://cdn4.iconfinder.com/data/icons/redis-2/1451/Untitled-2-512.png" /></a>
             </td>
             <td><a href="#"><img alt="Webpack" title="Webpack" height="28px"
                         src="https://raw.githubusercontent.com/webpack/media/master/logo/icon-square-big.png" /></a></td>
