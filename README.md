@@ -81,7 +81,7 @@
             <td><a href="#"><img alt="Android Studio" title="Android Studio" height="28px"
                         src="https://i.imgur.com/6nJGNMN.png" /></a></td>
             <td><a href="#"><img alt="AWS" title="AWS" height="28px"
-                        src="https://mk0futurumreseabr7pm.kinstacdn.com/wp-content/uploads/2020/01/aws-logo.png" /></a></td>
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/AWS_Simple_Icons_AWS_Cloud.svg/2560px-AWS_Simple_Icons_AWS_Cloud.svg.png" /></a></td>
             <td><a href="#"><img alt="Brave" title="React & React Native" height="28px"
                         src="https://w7.pngwing.com/pngs/79/518/png-transparent-js-react-js-logo-react-react-native-logos-icon-thumbnail.png" /></a></td>
             <td><a href="#"><img alt="Adobe Illustrator" title="Adobe Illustrator" height="28px"
