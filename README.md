@@ -39,7 +39,7 @@
             <td><a href="#"><img alt="C#" title="C#" height="28px"
                         src="https://img.icons8.com/color/48/000000/c-sharp-logo.png" /></a></td>
             <td><a href="#"><img alt="Nextjs" title="Nextjs" height="28px"
-                        src="https://seeklogo.com/images/N/next-js-icon-logo-EE302D5DBD-seeklogo.com.png" /></a></td>
+                        src="https://cdn.worldvectorlogo.com/logos/next-js.svg" /></a></td>
             <td><a href="#"><a href="#"><img alt="Vue" title="Vue" height="28px"
                         src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Vue.js_Logo_2.svg/1200px-Vue.js_Logo_2.svg.png" /></a></a>
             </td>
@@ -92,7 +92,7 @@
             <td><a href="#"><img alt="Adobe XD" title="Adobe XD" height="28px"
                         src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Adobe_XD_CC_icon.svg/2101px-Adobe_XD_CC_icon.svg.png" /></a></td>
             <td><a href="#"><img alt="MAC/iOS" title="MAC/iOS" height="28px"
-                        src="https://upload.wikimedia.org/wikipedia/commons/a/ab/Apple-logo.png" /></a></td>
+                        src="https://cdn-icons-png.freepik.com/512/2/2235.png" /></a></td>
             <td><a href="https://brave.com/eyl243"><img alt="Android" title="Android" height="28px"
                         src="https://upload.wikimedia.org/wikipedia/commons/6/66/Android_robot.png" /></a></td>
         </tr>
