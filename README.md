@@ -1,5 +1,3 @@
-<img width="512" height="512" alt="image" src="https://github.com/user-attachments/assets/965d2c81-fdcd-4235-a7d9-f2fa934bc5d2" /><a href="#"><img width="100%" height="auto" src="https://i.imgur.com/iXuL1HG.png" height="175px"/></a>
-
 <h5 align="right" >Josusama™</h5>
 
 <h3 align="center">僕のGitHubのリポジトリへようこそ! </h3>　<h4 align="center">Hey! I'm Josh, a passionate tech director, engineer and technology enthusiast. I believe in the power of collaboration and open-source, and GitHub is my platform to share my projects, ideas, and contributions with the developer community.　<img src="https://media.giphy.com/media/hvRJCLFzcasrR4ia7z/giphy.gif" width="28"> <img src="https://emojis.slackmojis.com/emojis/images/1531849430/4246/blob-sunglasses.gif?1531849430" width="28"/></h4>
