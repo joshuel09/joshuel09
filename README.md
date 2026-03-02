@@ -1,4 +1,4 @@
-<a href="#"><img width="100%" height="auto" src="https://i.imgur.com/iXuL1HG.png" height="175px"/></a>
+<img width="512" height="512" alt="image" src="https://github.com/user-attachments/assets/965d2c81-fdcd-4235-a7d9-f2fa934bc5d2" /><a href="#"><img width="100%" height="auto" src="https://i.imgur.com/iXuL1HG.png" height="175px"/></a>
 
 <h5 align="right" >Josusama™</h5>
 
@@ -69,7 +69,7 @@
             <td><a href="#"><img alt="Firebase" title="Firebase" height="28px"
                         src="https://brandslogos.com/wp-content/uploads/thumbs/firebase-logo-vector.svg" /></a></td>
             <td><a href="#"><img alt="TensorFlow" title="TensorFlow" height="28px"
-                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Tensorflow_logo.svg/957px-Tensorflow_logo.svg.png" /></a></td>
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQRt0OU-18slF5XnJ0no2b9gA8twntZG6UngQ&s" /></a></td>
             <td><a href="#"><img alt="Docker" title="Docker" height="28px"
                         src="https://cdn-icons-png.flaticon.com/512/5969/5969059.png" /></a>
             </td>
@@ -81,7 +81,7 @@
             <td><a href="#"><img alt="Android Studio" title="Android Studio" height="28px"
                         src="https://i.imgur.com/6nJGNMN.png" /></a></td>
             <td><a href="#"><img alt="AWS" title="AWS" height="28px"
-                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/AWS_Simple_Icons_AWS_Cloud.svg/2560px-AWS_Simple_Icons_AWS_Cloud.svg.png" /></a></td>
+                        src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/aws-icon.png" /></a></td>
             <td><a href="#"><img alt="Brave" title="React & React Native" height="28px"
                         src="https://w7.pngwing.com/pngs/79/518/png-transparent-js-react-js-logo-react-react-native-logos-icon-thumbnail.png" /></a></td>
             <td><a href="#"><img alt="Adobe Illustrator" title="Adobe Illustrator" height="28px"
