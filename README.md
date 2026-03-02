@@ -89,8 +89,8 @@
             </td>
             <td><a href="#"><img alt="Adobe Photoshop" title="Adobe Photoshop" height="28px"
                         src="https://cdn.iconscout.com/icon/free/png-512/adobe-photoshop-4-569303.png" /></a></td>
-            <td><a href="#"><img alt="Adobe XD" title="Adobe XD" height="28px"
-                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Adobe_XD_CC_icon.svg/2101px-Adobe_XD_CC_icon.svg.png" /></a></td>
+            <td><a href="#"><img alt="figma" title="figma" height="28px"
+                        src="https://upload.wikimedia.org/wikipedia/commons/3/33/Figma-logo.svg" /></a></td>
             <td><a href="#"><img alt="MAC/iOS" title="MAC/iOS" height="28px"
                         src="https://cdn-icons-png.freepik.com/512/2/2235.png" /></a></td>
             <td><a href="https://brave.com/eyl243"><img alt="Android" title="Android" height="28px"
