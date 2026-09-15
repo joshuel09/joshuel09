@@ -3,48 +3,82 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#000000">
 <title>JOSU SAMA — Opening Crawl</title>
 <style>
   :root { color-scheme: dark; }
   * { box-sizing: border-box; }
   html, body {
-    margin: 0; height: 100%; background: #000; color: #FFE81F;
-    font: 700 14px/1.5 "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-    letter-spacing: 1px;
+    margin: 0; padding: 0; height: 100%; background: #000; overflow: hidden;
+    color: #FFE81F;
+    font: 700 13px/1.4 "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    letter-spacing: 1.5px;
   }
-  body {
-    display: flex; flex-direction: column; align-items: center; justify-content: center;
-    gap: 20px; padding: max(16px, env(safe-area-inset-top)) 16px max(16px, env(safe-area-inset-bottom));
-    overflow: hidden;
+
+  /* the crawl fills the viewport; its own black ground hides the letterbox */
+  #crawl {
+    position: fixed; inset: 0;
+    width: 100%; height: 100%;
+    object-fit: contain;
+    display: block;
   }
-  #stage { width: 100%; max-width: 1100px; aspect-ratio: 1000 / 560; }
-  #crawl { width: 100%; height: 100%; display: block; }
-  .controls { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; min-height: 48px; }
+
+  /* ---- control bar ---------------------------------------------------- */
+  #bar {
+    position: fixed; left: 0; right: 0; bottom: 0; z-index: 2;
+    display: flex; flex-wrap: wrap; align-items: center; justify-content: center;
+    gap: 10px 14px;
+    padding: 18px 16px calc(18px + env(safe-area-inset-bottom, 0px));
+    background: linear-gradient(to top, rgba(0,0,0,.92), rgba(0,0,0,0));
+    opacity: 0; pointer-events: none;
+    transition: opacity .28s ease;
+  }
+  #bar.show { opacity: 1; pointer-events: auto; }
+
+  /* the invisible strip that reveals the bar on desktop */
+  #hotzone { position: fixed; left: 0; right: 0; bottom: 0; height: 22%; z-index: 1; }
+
   button {
-    font: inherit; letter-spacing: 2px; cursor: pointer;
-    color: #FFE81F; background: #0b0b12; border: 2px solid #FFE81F;
-    padding: 12px 26px; border-radius: 2px; transition: background .15s, color .15s;
+    font: inherit; letter-spacing: 2px; cursor: pointer; white-space: nowrap;
+    color: #FFE81F; background: rgba(11,11,18,.9); border: 2px solid #FFE81F;
+    padding: 11px 22px; border-radius: 2px;
+    transition: background .15s, color .15s;
   }
   button:hover, button:focus-visible { background: #FFE81F; color: #0b0b12; outline: none; }
-  a { color: #4BD5EE; text-decoration: none; font-size: 12px; letter-spacing: 2px; }
-  a:hover { text-decoration: underline; }
-  .hint { opacity: .55; font-size: 12px; letter-spacing: 2px; text-align: center; margin: 0; }
-  /* kept in layout, not display:none -- browsers stop playback on hidden frames */
-  #bgm { position: fixed; left: -9999px; width: 1px; height: 1px; border: 0; }
-  @media (max-width: 600px) { button { padding: 10px 18px; letter-spacing: 1px; } }
+  a {
+    color: #4BD5EE; text-decoration: none; letter-spacing: 2px;
+    padding: 11px 6px; white-space: nowrap;
+  }
+  a:hover, a:focus-visible { text-decoration: underline; }
+  #hint { opacity: .6; letter-spacing: 1.5px; margin: 0; flex-basis: 100%; text-align: center; }
+
+  /* ---- touch devices: no hover, so pin the bar open -------------------- */
+  @media (hover: none), (pointer: coarse) {
+    #bar { opacity: 1; pointer-events: auto; }
+    #hotzone { display: none; }
+  }
+
+  /* ---- small screens --------------------------------------------------- */
+  @media (max-width: 640px) {
+    html, body { font-size: 11px; letter-spacing: 1px; }
+    #bar { gap: 8px 10px; padding: 12px 10px calc(12px + env(safe-area-inset-bottom, 0px)); }
+    button { padding: 10px 14px; letter-spacing: 1px; }
+    a { padding: 10px 4px; }
+  }
 </style>
 </head>
 <body>
 
-<div id="stage"><img id="crawl" alt="A long time ago, in a repository far, far away.... JOSU SAMA"></div>
+<img id="crawl" alt="A long time ago, in a repository far, far away.... JOSU SAMA">
 
-<div class="controls">
+<div id="hotzone" aria-hidden="true"></div>
+
+<div id="bar">
   <button id="engage" type="button" hidden>&#9654; ENGAGE AUDIO</button>
   <button id="replay" type="button">&#8635; REPLAY</button>
+  <a href="https://github.com/joshuel09">&#10217; RETURN TO PROFILE</a>
+  <p id="hint"></p>
 </div>
-
-<p class="hint" id="hint"></p>
-<a href="https://github.com/joshuel09">&#10217; RETURN TO PROFILE</a>
 
 <div id="player"></div>
 
@@ -54,18 +88,37 @@
 
   // The crawl rolls immediately. The fanfare must land on the JOSU SAMA logo,
   // which the SVG brings up at 6.1s -- and this upload has ~1s of silence at the
-  // head, so playback starts at 4s and the first note arrives right on the logo.
+  // head, so playback starts at 4.5s and the first note arrives on the logo.
   var AUDIO_DELAY = 4500;
-  var CYCLE = 76000;   // hero.svg's own loop length -- re-roll in lockstep with it
+  var CYCLE = 76000;   // hero.svg's own loop length -- re-roll in lockstep
   var FADE  = 3000;    // ramp to silence across the last 3s of each cycle
 
   var crawl  = document.getElementById('crawl');
   var engage = document.getElementById('engage');
   var replay = document.getElementById('replay');
   var hint   = document.getElementById('hint');
-  var player = null, audioTimer = null, loopTimer = null, fadeTimer = null, fadeStep = null;
+  var bar    = document.getElementById('bar');
+  var player = null, audioTimer = null, loopTimer = null;
+  var fadeTimer = null, fadeStep = null, hideTimer = null;
 
-  // The API rejects calls before the player is ready, so guard every volume touch.
+  // ---- controls: reveal near the bottom edge, pointer devices only --------
+  var coarse = window.matchMedia('(hover: none), (pointer: coarse)').matches;
+
+  function showBar() {
+    bar.classList.add('show');
+    clearTimeout(hideTimer);
+    hideTimer = setTimeout(function () { bar.classList.remove('show'); }, 2600);
+  }
+
+  if (!coarse) {
+    document.addEventListener('mousemove', function (e) {
+      if (e.clientY > window.innerHeight * 0.78) showBar();
+    });
+    // keyboard users must still be able to reach the controls
+    bar.addEventListener('focusin', showBar);
+  }
+
+  // ---- audio -------------------------------------------------------------
   function setVol(v) {
     if (player && player.setVolume) { try { player.setVolume(v); } catch (err) {} }
   }
@@ -80,7 +133,7 @@
       hint.textContent = 'Fading out… ' + v + '%';
       if (i >= steps) {
         clearInterval(fadeStep);
-        hint.textContent = 'The crawl loops every 76 seconds.';
+        hint.textContent = '';
       }
     }, FADE / steps);
   }
@@ -105,12 +158,10 @@
     cueAudio();
   }
 
-  // Drive the loop from here rather than leaning on the SVG's internal repeat,
-  // so the music restarts with the same offset on every pass.
+  // Everything hangs off this one clock, so the fade lands exactly on the re-roll.
   function start() {
     clearInterval(loopTimer);
     roll();
-    hint.textContent = 'The crawl loops every 76 seconds.';
     loopTimer = setInterval(roll, CYCLE);
   }
 
@@ -124,15 +175,13 @@
       playerVars: { controls: 0, playsinline: 1, loop: 1, playlist: VIDEO },
       events: {
         onReady: function () {
-          document.getElementById('player').id = 'bgm';
-          // Re-anchor the WHOLE loop here. Calling cueAudio() alone left the
-          // fade on a different clock than the 76s re-roll, so the re-roll
-          // cancelled the fade partway through.
-          start();
-          // Check after the cue has fired: if it never started, autoplay was blocked.
+          var el = document.getElementById('player');
+          el.style.cssText = 'position:fixed;left:-9999px;width:1px;height:1px;border:0';
+          start();   // re-anchor the whole loop here
           setTimeout(function () {
             if (!player || player.getPlayerState() !== YT.PlayerState.PLAYING) {
               engage.hidden = false;
+              showBar();
             }
           }, AUDIO_DELAY + 1500);
         },
@@ -143,11 +192,12 @@
     });
   };
 
-  // A real click satisfies the gesture rule; restart both so they stay in sync.
   engage.addEventListener('click', start);
   replay.addEventListener('click', start);
 
-  start();
+  // show the crawl at once; the API re-anchors the loop a moment later
+  crawl.src = 'assets/hero.svg?t=' + Date.now();
+  if (coarse) bar.classList.add('show');
 })();
 </script>
 
