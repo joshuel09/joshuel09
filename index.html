@@ -45,6 +45,7 @@
 </div>
 
 <p class="hint" id="hint">Standing by&hellip;</p>
+<p class="hint" id="audiohint" hidden></p>
 <a href="https://github.com/joshuel09">&#10217; RETURN TO PROFILE</a>
 
 <div id="player"></div>
@@ -57,14 +58,26 @@
   var engage = document.getElementById('engage');
   var replay = document.getElementById('replay');
   var hint  = document.getElementById('hint');
-  var player = null, timer = null;
+  var audiohint = document.getElementById('audiohint');
+  var player = null, timer = null, tick = null;
+
+  // 1x1 transparent GIF. Removing the src attribute does NOT reliably clear an
+  // already-painted image, so we swap in a blank to actually blank the stage.
+  var BLANK = 'data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==';
 
   // Re-fetching the SVG restarts its CSS animations.
   function rollCrawl() {
     clearTimeout(timer);
-    crawl.removeAttribute('src');
-    hint.textContent = 'Crawl begins in 5 seconds…';
+    clearInterval(tick);
+    crawl.src = BLANK;
+    var left = HOLD / 1000;
+    hint.textContent = 'Crawl begins in ' + left + '…';
+    tick = setInterval(function () {
+      left -= 1;
+      if (left > 0) hint.textContent = 'Crawl begins in ' + left + '…';
+    }, 1000);
     timer = setTimeout(function () {
+      clearInterval(tick);
       crawl.src = 'assets/hero.svg?t=' + Date.now();
       hint.textContent = 'The crawl loops every 76 seconds.';
     }, HOLD);
@@ -86,12 +99,13 @@
           setTimeout(function () {
             if (!player || player.getPlayerState() !== YT.PlayerState.PLAYING) {
               engage.hidden = false;
-              hint.textContent = 'Your browser blocked autoplay — press ENGAGE AUDIO.';
+              audiohint.hidden = false;
+              audiohint.textContent = 'Browser blocked autoplay — press ENGAGE AUDIO.';
             }
           }, 1200);
         },
         onStateChange: function (e) {
-          if (e.data === YT.PlayerState.PLAYING) engage.hidden = true;
+          if (e.data === YT.PlayerState.PLAYING) { engage.hidden = true; audiohint.hidden = true; }
         }
       }
     });
