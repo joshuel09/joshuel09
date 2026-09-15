@@ -15,6 +15,13 @@
       <feGaussianBlur stdDeviation="1.2" result="b"/>
       <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
     </filter>
+    <pattern id="scanlines" patternUnits="userSpaceOnUse" width="4" height="4">
+      <rect width="4" height="4" fill="#fff"/>
+      <rect width="4" height="0.55" fill="#d4d4d4"/>
+    </pattern>
+    <mask id="scan" maskUnits="userSpaceOnUse" x="0" y="0" width="620" height="900">
+      <rect x="0" y="0" width="620" height="900" fill="url(#scanlines)"/>
+    </mask>
     <mask id="horizon" maskUnits="userSpaceOnUse" x="0" y="0" width="620" height="900">
       <rect x="0" y="0" width="620" height="310" fill="#000"/>
       <rect x="0" y="310" width="620" height="160" fill="url(#fade)"/>
@@ -520,7 +527,7 @@
 
   <rect width="620" height="900" fill="#000"/>
 
-  <g class="vfx">
+  <g class="vfx" mask="url(#scan)">
   <g class="space">
     <ellipse cx="124" cy="225" rx="236" ry="369" fill="url(#neb1)"/>
     <ellipse cx="521" cy="693" rx="205" ry="342" fill="url(#neb2)"/>

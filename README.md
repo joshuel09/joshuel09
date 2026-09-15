@@ -1,6 +1,9 @@
 <div align="center">
 
-<img width="100%" src="assets/hero.svg" alt="A long time ago, in a repository far, far away.... JOSUSAMA" />
+<picture>
+  <source media="(max-width: 700px)" srcset="https://raw.githubusercontent.com/joshuel09/joshuel09/main/assets/hero-portrait.svg">
+  <img width="100%" src="assets/hero.svg" alt="A long time ago, in a repository far, far away.... JOSU SAMA" />
+</picture>
 
 <sub><i>⟩ The crawl plays best with sound. Engage the full transmission.</i></sub>
 
