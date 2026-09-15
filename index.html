@@ -17,8 +17,7 @@
     gap: 20px; padding: max(16px, env(safe-area-inset-top)) 16px max(16px, env(safe-area-inset-bottom));
     overflow: hidden;
   }
-  /* reserve the crawl's box so nothing jumps during the 5s hold */
-  #stage { width: 100%; max-width: 1100px; aspect-ratio: 1000 / 560; position: relative; }
+  #stage { width: 100%; max-width: 1100px; aspect-ratio: 1000 / 560; }
   #crawl { width: 100%; height: 100%; display: block; }
   .controls { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; min-height: 48px; }
   button {
@@ -44,8 +43,7 @@
   <button id="replay" type="button">&#8635; REPLAY</button>
 </div>
 
-<p class="hint" id="hint">Standing by&hellip;</p>
-<p class="hint" id="audiohint" hidden></p>
+<p class="hint" id="hint"></p>
 <a href="https://github.com/joshuel09">&#10217; RETURN TO PROFILE</a>
 
 <div id="player"></div>
@@ -53,37 +51,35 @@
 <script>
 (function () {
   var VIDEO = '_D0ZQPqeJkk';
-  var HOLD  = 5000;               // 5s beat before the crawl rolls
-  var crawl = document.getElementById('crawl');
+
+  // The crawl rolls immediately. The fanfare must land on the JOSU SAMA logo,
+  // which the SVG brings up at 6.1s -- and this upload has ~1s of silence at the
+  // head, so playback starts at 5s and the first note arrives right on the logo.
+  var AUDIO_DELAY = 5000;
+
+  var crawl  = document.getElementById('crawl');
   var engage = document.getElementById('engage');
   var replay = document.getElementById('replay');
-  var hint  = document.getElementById('hint');
-  var audiohint = document.getElementById('audiohint');
-  var player = null, timer = null, tick = null;
+  var hint   = document.getElementById('hint');
+  var player = null, audioTimer = null;
 
-  // 1x1 transparent GIF. Removing the src attribute does NOT reliably clear an
-  // already-painted image, so we swap in a blank to actually blank the stage.
-  var BLANK = 'data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==';
-
-  // Re-fetching the SVG restarts its CSS animations.
-  function rollCrawl() {
-    clearTimeout(timer);
-    clearInterval(tick);
-    crawl.src = BLANK;
-    var left = HOLD / 1000;
-    hint.textContent = 'Crawl begins in ' + left + '…';
-    tick = setInterval(function () {
-      left -= 1;
-      if (left > 0) hint.textContent = 'Crawl begins in ' + left + '…';
-    }, 1000);
-    timer = setTimeout(function () {
-      clearInterval(tick);
-      crawl.src = 'assets/hero.svg?t=' + Date.now();
-      hint.textContent = 'The crawl loops every 76 seconds.';
-    }, HOLD);
+  function cueAudio() {
+    clearTimeout(audioTimer);
+    if (player) { player.stopVideo(); }
+    audioTimer = setTimeout(function () {
+      if (!player) return;
+      player.seekTo(0);
+      player.playVideo();
+    }, AUDIO_DELAY);
   }
 
-  // --- audio: try to autoplay, fall back to a button if the browser refuses ---
+  // Re-fetching the SVG restarts its CSS animations.
+  function start() {
+    crawl.src = 'assets/hero.svg?t=' + Date.now();
+    hint.textContent = 'The crawl loops every 76 seconds.';
+    cueAudio();
+  }
+
   var tag = document.createElement('script');
   tag.src = 'https://www.youtube.com/iframe_api';
   document.head.appendChild(tag);
@@ -91,39 +87,30 @@
   window.onYouTubeIframeAPIReady = function () {
     player = new YT.Player('player', {
       videoId: VIDEO,
-      playerVars: { autoplay: 1, loop: 1, playlist: VIDEO, controls: 0, playsinline: 1 },
+      playerVars: { controls: 0, playsinline: 1, loop: 1, playlist: VIDEO },
       events: {
-        onReady: function (e) {
-          e.target.playVideo();
-          // If it has not actually started shortly after, autoplay was blocked.
+        onReady: function () {
+          document.getElementById('player').id = 'bgm';
+          cueAudio();
+          // Check after the cue has fired: if it never started, autoplay was blocked.
           setTimeout(function () {
             if (!player || player.getPlayerState() !== YT.PlayerState.PLAYING) {
               engage.hidden = false;
-              audiohint.hidden = false;
-              audiohint.textContent = 'Browser blocked autoplay — press ENGAGE AUDIO.';
             }
-          }, 1200);
+          }, AUDIO_DELAY + 1500);
         },
         onStateChange: function (e) {
-          if (e.data === YT.PlayerState.PLAYING) { engage.hidden = true; audiohint.hidden = true; }
+          if (e.data === YT.PlayerState.PLAYING) engage.hidden = true;
         }
       }
     });
-    document.getElementById('player').id = 'bgm';
   };
 
-  engage.addEventListener('click', function () {
-    if (player) player.playVideo();   // a real click always satisfies the gesture rule
-    engage.hidden = true;
-    rollCrawl();
-  });
+  // A real click satisfies the gesture rule; restart both so they stay in sync.
+  engage.addEventListener('click', start);
+  replay.addEventListener('click', start);
 
-  replay.addEventListener('click', function () {
-    if (player) { player.seekTo(0); player.playVideo(); }
-    rollCrawl();
-  });
-
-  rollCrawl();
+  start();
 })();
 </script>
 
