@@ -55,23 +55,43 @@
   // The crawl rolls immediately. The fanfare must land on the JOSU SAMA logo,
   // which the SVG brings up at 6.1s -- and this upload has ~1s of silence at the
   // head, so playback starts at 4s and the first note arrives right on the logo.
-  var AUDIO_DELAY = 4000;
+  var AUDIO_DELAY = 4500;
   var CYCLE = 76000;   // hero.svg's own loop length -- re-roll in lockstep with it
+  var FADE  = 3000;    // ramp to silence across the last 3s of each cycle
 
   var crawl  = document.getElementById('crawl');
   var engage = document.getElementById('engage');
   var replay = document.getElementById('replay');
   var hint   = document.getElementById('hint');
-  var player = null, audioTimer = null, loopTimer = null;
+  var player = null, audioTimer = null, loopTimer = null, fadeTimer = null, fadeStep = null;
+
+  // The API rejects calls before the player is ready, so guard every volume touch.
+  function setVol(v) {
+    if (player && player.setVolume) { try { player.setVolume(v); } catch (err) {} }
+  }
+
+  function fadeOut() {
+    clearInterval(fadeStep);
+    var steps = 30, i = 0;
+    fadeStep = setInterval(function () {
+      i += 1;
+      setVol(Math.max(0, Math.round(100 * (1 - i / steps))));
+      if (i >= steps) clearInterval(fadeStep);
+    }, FADE / steps);
+  }
 
   function cueAudio() {
     clearTimeout(audioTimer);
+    clearTimeout(fadeTimer);
+    clearInterval(fadeStep);
     if (player) { player.stopVideo(); }
     audioTimer = setTimeout(function () {
       if (!player) return;
+      setVol(100);            // restore after any previous fade
       player.seekTo(0);
       player.playVideo();
     }, AUDIO_DELAY);
+    fadeTimer = setTimeout(fadeOut, CYCLE - FADE);
   }
 
   // Re-fetching the SVG restarts its CSS animations.
