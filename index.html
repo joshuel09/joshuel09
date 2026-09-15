@@ -35,9 +35,6 @@
   }
   #bar.show { opacity: 1; pointer-events: auto; }
 
-  /* the invisible strip that reveals the bar on desktop */
-  #hotzone { position: fixed; left: 0; right: 0; bottom: 0; height: 22%; z-index: 1; }
-
   button {
     font: inherit; letter-spacing: 2px; cursor: pointer; white-space: nowrap;
     color: #FFE81F; background: rgba(11,11,18,.9); border: 2px solid #FFE81F;
@@ -55,7 +52,6 @@
   /* ---- touch devices: no hover, so pin the bar open -------------------- */
   @media (hover: none), (pointer: coarse) {
     #bar { opacity: 1; pointer-events: auto; }
-    #hotzone { display: none; }
   }
 
   /* ---- small screens --------------------------------------------------- */
@@ -70,8 +66,6 @@
 <body>
 
 <img id="crawl" alt="A long time ago, in a repository far, far away.... JOSU SAMA">
-
-<div id="hotzone" aria-hidden="true"></div>
 
 <div id="bar">
   <button id="engage" type="button" hidden>&#9654; ENGAGE AUDIO</button>
@@ -99,6 +93,14 @@
   var hint   = document.getElementById('hint');
   var bar    = document.getElementById('bar');
   var player = null, audioTimer = null, loopTimer = null;
+
+  // A landscape crawl is a thin strip on a phone, so portrait viewports get
+  // their own taller artwork with the copy rewrapped to shorter lines.
+  var portraitMQ = window.matchMedia('(max-aspect-ratio: 1/1)');
+  function heroSrc() {
+    return (portraitMQ.matches ? 'assets/hero-portrait.svg' : 'assets/hero.svg')
+           + '?t=' + Date.now();
+  }
   var fadeTimer = null, fadeStep = null, hideTimer = null;
 
   // ---- controls: reveal near the bottom edge, pointer devices only --------
@@ -111,9 +113,8 @@
   }
 
   if (!coarse) {
-    document.addEventListener('mousemove', function (e) {
-      if (e.clientY > window.innerHeight * 0.78) showBar();
-    });
+    // any cursor movement reveals it; it still lives at the bottom
+    document.addEventListener('mousemove', showBar);
     // keyboard users must still be able to reach the controls
     bar.addEventListener('focusin', showBar);
   }
@@ -154,7 +155,7 @@
 
   // Re-fetching the SVG restarts its CSS animations.
   function roll() {
-    crawl.src = 'assets/hero.svg?t=' + Date.now();
+    crawl.src = heroSrc();
     cueAudio();
   }
 
@@ -192,11 +193,15 @@
     });
   };
 
+  var mqHandler = function () { start(); };
+  if (portraitMQ.addEventListener) portraitMQ.addEventListener('change', mqHandler);
+  else if (portraitMQ.addListener) portraitMQ.addListener(mqHandler);
+
   engage.addEventListener('click', start);
   replay.addEventListener('click', start);
 
   // show the crawl at once; the API re-anchors the loop a moment later
-  crawl.src = 'assets/hero.svg?t=' + Date.now();
+  crawl.src = heroSrc();
   if (coarse) bar.classList.add('show');
 })();
 </script>
