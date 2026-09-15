@@ -1,5 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1000" height="560" viewBox="0 0 1000 560" role="img" aria-label="Star Wars style opening crawl for Josusama">
   <title>A long time ago, in a repository far, far away....</title>
+  <metadata>Copyright (c) 2026 Joshuel Ranola (@joshuel09). All rights reserved. Unauthorised copying or redistribution prohibited. https://github.com/joshuel09</metadata>
   <defs>
     <radialGradient id="neb1"><stop offset="0%" stop-color="#5b21b6" stop-opacity=".55"/><stop offset="100%" stop-color="#5b21b6" stop-opacity="0"/></radialGradient>
     <radialGradient id="neb2"><stop offset="0%" stop-color="#0ea5e9" stop-opacity=".40"/><stop offset="100%" stop-color="#0ea5e9" stop-opacity="0"/></radialGradient>

@@ -1,5 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="420" height="30" viewBox="0 0 420 30" role="img" aria-label="lightsaber divider">
   <title>— lightsaber —</title>
+  <metadata>Copyright (c) 2026 Joshuel Ranola (@joshuel09). All rights reserved. Unauthorised copying or redistribution prohibited. https://github.com/joshuel09</metadata>
   <defs>
     <filter id="glow" filterUnits="userSpaceOnUse" x="0" y="0" width="420" height="30">
       <feGaussianBlur stdDeviation="3" result="b"/>

@@ -115,3 +115,11 @@ func main() {
   <source media="(max-width: 700px)" srcset="https://raw.githubusercontent.com/joshuel09/joshuel09/main/assets/divider-green-m.svg">
   <img width="100%" src="assets/divider-green.svg" alt="" />
 </picture>
+
+<div align="center">
+<sub>
+&copy; 2026 Joshuel Ranola &middot; All rights reserved &middot; <a href="LICENSE">LICENSE</a><br/>
+<sub>Unofficial, non-commercial fan tribute. STAR WARS is a trademark of Lucasfilm Ltd.<br/>
+Not affiliated with or endorsed by Lucasfilm Ltd. or The Walt Disney Company.</sub>
+</sub>
+</div>
