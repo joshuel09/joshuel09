@@ -68,7 +68,7 @@
 <img id="crawl" alt="A long time ago, in a repository far, far away.... JOSU SAMA">
 
 <div id="bar">
-  <button id="engage" type="button" hidden>&#9654; ENGAGE AUDIO</button>
+  <button id="engage" type="button">&#9654; ENGAGE AUDIO</button>
   <button id="replay" type="button">&#8635; REPLAY</button>
   <a href="https://github.com/joshuel09">&#10217; RETURN TO PROFILE</a>
   <p id="hint"></p>
@@ -92,7 +92,7 @@
   var replay = document.getElementById('replay');
   var hint   = document.getElementById('hint');
   var bar    = document.getElementById('bar');
-  var player = null, audioTimer = null, loopTimer = null;
+  var player = null, audioTimer = null, loopTimer = null, unlocked = false;
 
   // A landscape crawl is a thin strip on a phone, so portrait viewports get
   // their own taller artwork with the copy rewrapped to shorter lines.
@@ -143,10 +143,10 @@
     clearTimeout(audioTimer);
     clearTimeout(fadeTimer);
     clearInterval(fadeStep);
-    if (player) { player.stopVideo(); }
+    if (player) { try { player.pauseVideo(); } catch (err) {} }
     audioTimer = setTimeout(function () {
       if (!player) return;
-      setVol(100);            // restore after any previous fade
+      setVol(100);
       player.seekTo(0);
       player.playVideo();
     }, AUDIO_DELAY);
@@ -179,12 +179,6 @@
           var el = document.getElementById('player');
           el.style.cssText = 'position:fixed;left:-9999px;width:1px;height:1px;border:0';
           start();   // re-anchor the whole loop here
-          setTimeout(function () {
-            if (!player || player.getPlayerState() !== YT.PlayerState.PLAYING) {
-              engage.hidden = false;
-              showBar();
-            }
-          }, AUDIO_DELAY + 1500);
         },
         onStateChange: function (e) {
           if (e.data === YT.PlayerState.PLAYING) engage.hidden = true;
@@ -197,8 +191,18 @@
   if (portraitMQ.addEventListener) portraitMQ.addEventListener('change', mqHandler);
   else if (portraitMQ.addListener) portraitMQ.addListener(mqHandler);
 
-  engage.addEventListener('click', start);
-  replay.addEventListener('click', start);
+  // iOS grants playback only inside the gesture's own call stack, and a
+  // setTimeout'd play is refused. Play+pause once on the tap to unlock the
+  // element; after that the delayed play is allowed for the rest of the session.
+  function unlock() {
+    if (player && !unlocked) {
+      try { player.playVideo(); player.pauseVideo(); unlocked = true; } catch (err) {}
+    }
+  }
+  function tap() { unlock(); start(); }
+
+  engage.addEventListener('click', tap);
+  replay.addEventListener('click', tap);
 
   // show the crawl at once; the API re-anchors the loop a moment later
   crawl.src = heroSrc();

@@ -681,8 +681,8 @@
   </g>
 
   <g class="intro">
-    <text x="171" y="248">A long time ago, in a repository</text>
-    <text x="171" y="312">far, far away....</text>
+    <text x="160.8" y="248" textLength="678" lengthAdjust="spacingAndGlyphs">A long time ago, in a repository</text>
+    <text x="160.8" y="312" textLength="360" lengthAdjust="spacingAndGlyphs">far, far away....</text>
   </g>
 
   <g class="logo">
@@ -694,19 +694,19 @@
   </g>
 
   <g mask="url(#horizon)">
-      <text class="cl c0">It is a period of continuous</text>
-      <text class="cl c1">deployment. From a workstation</text>
-      <text class="cl c2">in Japan, a full-stack system</text>
-      <text class="cl c3">engineer ships web, mobile</text>
-      <text class="cl c4">and AI systems.</text>
-      <text class="cl c6">Armed with Go, TypeScript, Vue,</text>
-      <text class="cl c7">Python and PostgreSQL, building</text>
-      <text class="cl c8">platforms that outlive their</text>
-      <text class="cl c9">hype cycle.</text>
-      <text class="cl c11">Self-taught in design, fluent</text>
-      <text class="cl c12">in backend, frontend and infra,</text>
-      <text class="cl c13">charting a course through Go and</text>
-      <text class="cl c14">distributed systems.</text>
-      <text class="cl c16">May the Source be with you.</text>
+      <text class="cl c0" textLength="610" lengthAdjust="spacingAndGlyphs">It is a period of continuous</text>
+      <text class="cl c1" textLength="654" lengthAdjust="spacingAndGlyphs">deployment. From a workstation</text>
+      <text class="cl c2" textLength="632" lengthAdjust="spacingAndGlyphs">in Japan, a full-stack system</text>
+      <text class="cl c3" textLength="567" lengthAdjust="spacingAndGlyphs">engineer ships web, mobile</text>
+      <text class="cl c4" textLength="327" lengthAdjust="spacingAndGlyphs">and AI systems.</text>
+      <text class="cl c6" textLength="676" lengthAdjust="spacingAndGlyphs">Armed with Go, TypeScript, Vue,</text>
+      <text class="cl c7" textLength="676" lengthAdjust="spacingAndGlyphs">Python and PostgreSQL, building</text>
+      <text class="cl c8" textLength="610" lengthAdjust="spacingAndGlyphs">platforms that outlive their</text>
+      <text class="cl c9" textLength="240" lengthAdjust="spacingAndGlyphs">hype cycle.</text>
+      <text class="cl c11" textLength="632" lengthAdjust="spacingAndGlyphs">Self-taught in design, fluent</text>
+      <text class="cl c12" textLength="676" lengthAdjust="spacingAndGlyphs">in backend, frontend and infra,</text>
+      <text class="cl c13" textLength="698" lengthAdjust="spacingAndGlyphs">charting a course through Go and</text>
+      <text class="cl c14" textLength="436" lengthAdjust="spacingAndGlyphs">distributed systems.</text>
+      <text class="cl c16" textLength="589" lengthAdjust="spacingAndGlyphs">May the Source be with you.</text>
   </g>
 </svg>

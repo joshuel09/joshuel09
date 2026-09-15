@@ -831,8 +831,8 @@
   </g>
 
   <g class="intro">
-    <text x="62" y="420">A long time ago, in a repository</text>
-    <text x="62" y="470">far, far away....</text>
+    <text x="38.0" y="420" textLength="544" lengthAdjust="spacingAndGlyphs">A long time ago, in a repository</text>
+    <text x="38.0" y="470" textLength="289" lengthAdjust="spacingAndGlyphs">far, far away....</text>
   </g>
 
   <g class="logo">
@@ -844,24 +844,24 @@
   </g>
 
   <g mask="url(#horizon)">
-      <text class="cl c0">It is a period of</text>
-      <text class="cl c1">continuous deployment.</text>
-      <text class="cl c2">From a workstation in</text>
-      <text class="cl c3">Japan, a full-stack</text>
-      <text class="cl c4">system engineer ships</text>
-      <text class="cl c5">web, mobile and AI.</text>
-      <text class="cl c7">Armed with Go,</text>
-      <text class="cl c8">TypeScript, Vue and</text>
-      <text class="cl c9">PostgreSQL, building</text>
-      <text class="cl c10">platforms that outlive</text>
-      <text class="cl c11">their hype cycle.</text>
-      <text class="cl c13">Self-taught in design,</text>
-      <text class="cl c14">fluent in backend,</text>
-      <text class="cl c15">frontend and infra,</text>
-      <text class="cl c16">charting a course</text>
-      <text class="cl c17">through Go and</text>
-      <text class="cl c18">distributed systems.</text>
-      <text class="cl c20">May the Source be</text>
-      <text class="cl c21">with you.</text>
+      <text class="cl c0" textLength="355" lengthAdjust="spacingAndGlyphs">It is a period of</text>
+      <text class="cl c1" textLength="460" lengthAdjust="spacingAndGlyphs">continuous deployment.</text>
+      <text class="cl c2" textLength="439" lengthAdjust="spacingAndGlyphs">From a workstation in</text>
+      <text class="cl c3" textLength="397" lengthAdjust="spacingAndGlyphs">Japan, a full-stack</text>
+      <text class="cl c4" textLength="439" lengthAdjust="spacingAndGlyphs">system engineer ships</text>
+      <text class="cl c5" textLength="397" lengthAdjust="spacingAndGlyphs">web, mobile and AI.</text>
+      <text class="cl c7" textLength="293" lengthAdjust="spacingAndGlyphs">Armed with Go,</text>
+      <text class="cl c8" textLength="397" lengthAdjust="spacingAndGlyphs">TypeScript, Vue and</text>
+      <text class="cl c9" textLength="418" lengthAdjust="spacingAndGlyphs">PostgreSQL, building</text>
+      <text class="cl c10" textLength="460" lengthAdjust="spacingAndGlyphs">platforms that outlive</text>
+      <text class="cl c11" textLength="355" lengthAdjust="spacingAndGlyphs">their hype cycle.</text>
+      <text class="cl c13" textLength="460" lengthAdjust="spacingAndGlyphs">Self-taught in design,</text>
+      <text class="cl c14" textLength="376" lengthAdjust="spacingAndGlyphs">fluent in backend,</text>
+      <text class="cl c15" textLength="397" lengthAdjust="spacingAndGlyphs">frontend and infra,</text>
+      <text class="cl c16" textLength="355" lengthAdjust="spacingAndGlyphs">charting a course</text>
+      <text class="cl c17" textLength="293" lengthAdjust="spacingAndGlyphs">through Go and</text>
+      <text class="cl c18" textLength="418" lengthAdjust="spacingAndGlyphs">distributed systems.</text>
+      <text class="cl c20" textLength="355" lengthAdjust="spacingAndGlyphs">May the Source be</text>
+      <text class="cl c21" textLength="188" lengthAdjust="spacingAndGlyphs">with you.</text>
   </g>
 </svg>
