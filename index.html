@@ -72,11 +72,16 @@
 
   function fadeOut() {
     clearInterval(fadeStep);
-    var steps = 30, i = 0;
+    var steps = 60, i = 0;
     fadeStep = setInterval(function () {
       i += 1;
-      setVol(Math.max(0, Math.round(100 * (1 - i / steps))));
-      if (i >= steps) clearInterval(fadeStep);
+      var v = Math.max(0, Math.round(100 * (1 - i / steps)));
+      setVol(v);
+      hint.textContent = 'Fading out… ' + v + '%';
+      if (i >= steps) {
+        clearInterval(fadeStep);
+        hint.textContent = 'The crawl loops every 76 seconds.';
+      }
     }, FADE / steps);
   }
 
@@ -120,7 +125,10 @@
       events: {
         onReady: function () {
           document.getElementById('player').id = 'bgm';
-          cueAudio();
+          // Re-anchor the WHOLE loop here. Calling cueAudio() alone left the
+          // fade on a different clock than the 76s re-roll, so the re-roll
+          // cancelled the fade partway through.
+          start();
           // Check after the cue has fired: if it never started, autoplay was blocked.
           setTimeout(function () {
             if (!player || player.getPlayerState() !== YT.PlayerState.PLAYING) {
