@@ -19,7 +19,10 @@
 
 </div>
 
-<img width="100%" src="assets/divider-blue.svg" alt="" />
+<picture>
+  <source media="(max-width: 700px)" srcset="https://raw.githubusercontent.com/joshuel09/joshuel09/main/assets/divider-blue-m.svg">
+  <img width="100%" src="assets/divider-blue.svg" alt="" />
+</picture>
 
 ## ✦ 🛸 `// HOLOCRON_ENTRY`
 
@@ -63,7 +66,10 @@ func main() {
 | 🛸 | Currently engineering full-stack systems in **Japan** |
 | 🧠 | Deep-diving **Go**, **AI/RAG pipelines** and **distributed systems** |
 
-<img width="100%" src="assets/divider-red.svg" alt="" />
+<picture>
+  <source media="(max-width: 700px)" srcset="https://raw.githubusercontent.com/joshuel09/joshuel09/main/assets/divider-red-m.svg">
+  <img width="100%" src="assets/divider-red.svg" alt="" />
+</picture>
 
 ## ✦ ⚔️ `// JEDI_ARSENAL`
 
@@ -105,4 +111,7 @@ func main() {
 
 </div>
 
-<img width="100%" src="assets/divider-green.svg" alt="" />
+<picture>
+  <source media="(max-width: 700px)" srcset="https://raw.githubusercontent.com/joshuel09/joshuel09/main/assets/divider-green-m.svg">
+  <img width="100%" src="assets/divider-green.svg" alt="" />
+</picture>
