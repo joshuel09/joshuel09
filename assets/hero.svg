@@ -7,6 +7,21 @@
     <linearGradient id="fade" gradientUnits="userSpaceOnUse" x1="0" y1="195" x2="0" y2="315">
       <stop offset="0%" stop-color="#000"/><stop offset="55%" stop-color="#9a9a9a"/><stop offset="100%" stop-color="#fff"/>
     </linearGradient>
+    <filter id="crt" filterUnits="userSpaceOnUse" x="0" y="0" width="1000" height="560">
+      <feGaussianBlur stdDeviation="2.6" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="crt2" filterUnits="userSpaceOnUse" x="0" y="0" width="1000" height="560">
+      <feGaussianBlur stdDeviation="1.2" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <pattern id="scanlines" patternUnits="userSpaceOnUse" width="4" height="4">
+      <rect width="4" height="4" fill="#fff"/>
+      <rect width="4" height="1.4" fill="#8a8a8a"/>
+    </pattern>
+    <mask id="scan" maskUnits="userSpaceOnUse" x="0" y="0" width="1000" height="560">
+      <rect x="0" y="0" width="1000" height="560" fill="url(#scanlines)"/>
+    </mask>
     <mask id="horizon" maskUnits="userSpaceOnUse" x="0" y="0" width="1000" height="560">
       <rect x="0" y="0" width="1000" height="195" fill="#000"/>
       <rect x="0" y="195" width="1000" height="120" fill="url(#fade)"/>
@@ -19,6 +34,17 @@
     @keyframes drift { from { transform:translateX(0) } to { transform:translateX(-1000px) } }
     @keyframes space { 0%,7% { opacity:0 } 13%,96% { opacity:1 } 100% { opacity:0 } }
     @keyframes intro { 0% { opacity:0 } 2% { opacity:1 } 6% { opacity:1 } 7.9% { opacity:0 } 100% { opacity:0 } }
+    @keyframes flick {
+      0%,100% { opacity:1;  transform:translateX(0) }
+      7%      { opacity:.84; transform:translateX(.6px) }
+      11%     { opacity:1;  transform:translateX(0) }
+      23%     { opacity:.93; transform:translateX(-.5px) }
+      27%     { opacity:1;  transform:translateX(0) }
+      54%     { opacity:.87; transform:translateX(.4px) }
+      57%     { opacity:1;  transform:translateX(0) }
+      81%     { opacity:.95; transform:translateX(-.3px) }
+      84%     { opacity:1;  transform:translateX(0) }
+    }
     @keyframes logo {
       0% { opacity:0; transform:translate(500px,285px) scale(1.45) }
       8.00% { opacity:0.000; transform:translate(500px,285px) scale(1.4500) }
@@ -341,8 +367,9 @@
 
     .space { opacity:0; animation:space 76.0s linear infinite both }
     .sky   { animation:drift 90s linear infinite }
+    .vfx   { animation:flick 2.4s steps(1,end) infinite }
     .intro { opacity:0; animation:intro 76.0s linear infinite both;
-              font:700 46px 'Franklin Gothic Medium','Arial Narrow',Arial,sans-serif; fill:#4BD5EE; letter-spacing:3px }
+              font:700 46px 'Franklin Gothic Medium','Arial Narrow',Arial,sans-serif; fill:#2F6FB5; letter-spacing:3px }
     .logo  { opacity:1; transform:translate(500px,285px) scale(1.45);
               animation:logo 76.0s linear infinite both }
     .sub   { font:700 17px 'Franklin Gothic Medium','Arial Narrow',Arial,sans-serif; fill:#FFE81F;
@@ -368,6 +395,7 @@
 
   <rect width="1000" height="560" fill="#000"/>
 
+  <g class="vfx" mask="url(#scan)">
   <g class="space">
     <ellipse cx="200" cy="140" rx="380" ry="230" fill="url(#neb1)"/>
     <ellipse cx="840" cy="431" rx="330" ry="213" fill="url(#neb2)"/>
@@ -680,33 +708,34 @@
     </g>
   </g>
 
-  <g class="intro">
+  <g filter="url(#crt)"><g class="intro">
     <text x="160.8" y="248" textLength="678" lengthAdjust="spacingAndGlyphs">A long time ago, in a repository</text>
     <text x="160.8" y="312" textLength="360" lengthAdjust="spacingAndGlyphs">far, far away....</text>
-  </g>
+  </g></g>
 
-  <g class="logo">
+  <g filter="url(#crt)"><g class="logo">
     <g fill="#FFE81F">
       <g transform="translate(-280,-18) scale(0.09447,-0.05679) translate(-0.0,0)"><path transform="translate(0,0)" d="M1046 1444V1014H796V-8Q790 -174 760.0 -242.0Q730 -310 653.0 -370.0Q576 -430 460.0 -461.0Q344 -492 250.0 -502.0Q156 -512 0 -512V-82Q88 -84 141.0 -76.0Q194 -68 231.0 -50.0Q268 -32 291.0 1.0Q314 34 326 124V1444Z"/><path transform="translate(1036,0)" d="M1668 714Q1668 477 1569.0 310.0Q1470 143 1282.5 59.0Q1095 -25 835 -25Q575 -25 388.5 59.5Q202 144 106.0 309.5Q10 475 10 714Q10 895 65.0 1032.5Q120 1170 226.0 1264.0Q332 1358 486.0 1406.5Q640 1455 835 1455Q1094 1455 1282.0 1369.5Q1470 1284 1569.0 1117.5Q1668 951 1668 714ZM523 710Q523 571 585.5 468.0Q648 365 832 365Q974 365 1044.5 419.0Q1115 473 1132.5 542.5Q1150 612 1156 710Q1150 849 1089.0 952.5Q1028 1056 832 1056Q523 1056 523 710Z"/><path transform="translate(3196,0)" d="M1298 1014H844Q587 1022 768 872Q1092 588 1086.0 320.0Q1080 52 768 0H-492V430H304Q587 422 376 588Q28 908 80.0 1176.0Q132 1444 408 1444H1298Z"/><path transform="translate(4484,0)" d="M480 1444V590Q474 444 536.0 387.0Q598 330 730 326Q836 328 907.0 388.0Q978 448 974 590V1444H1444V597Q1441 417 1384.5 309.5Q1328 202 1241.5 130.0Q1155 58 1024.5 18.0Q894 -22 734 -26Q601 -23 463.5 10.5Q326 44 223.5 116.0Q121 188 65.5 301.0Q10 414 10 596V1444Z"/></g>
       <g transform="translate(-280,100) scale(0.07943,-0.05679) translate(-0.0,0)"><path transform="translate(492,0)" d="M1298 1014H844Q587 1022 768 872Q1092 588 1086.0 320.0Q1080 52 768 0H-492V430H304Q587 422 376 588Q28 908 80.0 1176.0Q132 1444 408 1444H1298Z"/><path transform="translate(1890,0)" d="M755 1124 548 552H946ZM-100 1014V1444H1112L1595 0H1049L958 260H529L438 0H-80L253 1014Z"/><path transform="translate(3745,0)" d="M40 0V1014H-260V1444H510L826 844L1140 1444H1610V0H1140V600L838 0H812L510 600V0Z"/><path transform="translate(5455,0)" d="M755 1124 548 552H946ZM-100 1014V1444H1112L1595 0H1049L958 260H529L438 0H-80L253 1014Z"/></g>
     </g>
     <text x="0" y="132" class="sub">FULL-STACK SYSTEM ENGINEER</text>
-  </g>
+  </g></g>
 
-  <g mask="url(#horizon)">
+  <g mask="url(#horizon)"><g filter="url(#crt2)">
       <text class="cl c0" textLength="610" lengthAdjust="spacingAndGlyphs">It is a period of continuous</text>
       <text class="cl c1" textLength="654" lengthAdjust="spacingAndGlyphs">deployment. From a workstation</text>
       <text class="cl c2" textLength="632" lengthAdjust="spacingAndGlyphs">in Japan, a full-stack system</text>
       <text class="cl c3" textLength="567" lengthAdjust="spacingAndGlyphs">engineer ships web, mobile</text>
       <text class="cl c4" textLength="327" lengthAdjust="spacingAndGlyphs">and AI systems.</text>
-      <text class="cl c6" textLength="676" lengthAdjust="spacingAndGlyphs">Armed with Go, TypeScript, Vue,</text>
-      <text class="cl c7" textLength="676" lengthAdjust="spacingAndGlyphs">Python and PostgreSQL, building</text>
-      <text class="cl c8" textLength="610" lengthAdjust="spacingAndGlyphs">platforms that outlive their</text>
-      <text class="cl c9" textLength="240" lengthAdjust="spacingAndGlyphs">hype cycle.</text>
+      <text class="cl c6" textLength="567" lengthAdjust="spacingAndGlyphs">Armed with Go, TypeScript,</text>
+      <text class="cl c7" textLength="501" lengthAdjust="spacingAndGlyphs">Next, React, Python and</text>
+      <text class="cl c8" textLength="654" lengthAdjust="spacingAndGlyphs">PostgreSQL, building platforms</text>
+      <text class="cl c9" textLength="654" lengthAdjust="spacingAndGlyphs">that outlive their hype cycle.</text>
       <text class="cl c11" textLength="632" lengthAdjust="spacingAndGlyphs">Self-taught in design, fluent</text>
       <text class="cl c12" textLength="676" lengthAdjust="spacingAndGlyphs">in backend, frontend and infra,</text>
       <text class="cl c13" textLength="698" lengthAdjust="spacingAndGlyphs">charting a course through Go and</text>
       <text class="cl c14" textLength="436" lengthAdjust="spacingAndGlyphs">distributed systems.</text>
       <text class="cl c16" textLength="589" lengthAdjust="spacingAndGlyphs">May the Source be with you.</text>
+  </g></g>
   </g>
 </svg>

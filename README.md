@@ -36,7 +36,7 @@ func main() {
 		Callsign:  "Josusama™",
 		Rank:      "Full-Stack System Engineer · Tech Director",
 		HomeWorld: "🇯🇵 Japan",
-		Sabers:    []string{"Go", "TypeScript", "Vue", "Python", "PostgreSQL"},
+		Sabers:    []string{"Go", "TypeScript", "Next.js", "React", "Python", "PostgreSQL"},
 		Creed:     "Ship systems that outlive their hype cycle.",
 	}
 	me.Ignite() // ⚔️
@@ -72,7 +72,7 @@ func main() {
 
 **`⟩` COCKPIT — FRONTEND**
 
-<img src="https://skillicons.dev/icons?i=vue,react,nextjs,angular,tailwind,vite,figma&theme=dark" alt="Frontend" />
+<img src="https://skillicons.dev/icons?i=react,nextjs,typescript,tailwind,vite,figma&theme=dark" alt="Frontend" />
 
 **`⟩` HYPERDRIVE — BACKEND**
 
