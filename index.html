@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>JOSU SAMA — Opening Crawl</title>
+<style>
+  :root { color-scheme: dark; }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; height: 100%; background: #000; color: #FFE81F;
+    font: 700 14px/1.5 "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    letter-spacing: 1px;
+  }
+  body {
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    gap: 22px; padding: max(16px, env(safe-area-inset-top)) 16px max(16px, env(safe-area-inset-bottom));
+    overflow: hidden;
+  }
+  #crawl { width: 100%; max-width: 1100px; display: block; }
+  .controls { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; }
+  button {
+    font: inherit; letter-spacing: 2px; cursor: pointer;
+    color: #FFE81F; background: #0b0b12; border: 2px solid #FFE81F;
+    padding: 12px 26px; border-radius: 2px; transition: background .15s, color .15s;
+  }
+  button:hover, button:focus-visible { background: #FFE81F; color: #0b0b12; outline: none; }
+  a { color: #4BD5EE; text-decoration: none; font-size: 12px; letter-spacing: 2px; }
+  a:hover { text-decoration: underline; }
+  /* kept in the layout (not display:none) so browsers keep it playing */
+  #bgm { position: fixed; width: 1px; height: 1px; left: -9999px; border: 0; }
+  .hint { opacity: .55; font-size: 12px; letter-spacing: 2px; text-align: center; }
+  @media (max-width: 600px) { button { padding: 10px 18px; letter-spacing: 1px; } }
+</style>
+</head>
+<body>
+
+<img id="crawl" src="assets/hero.svg" alt="A long time ago, in a repository far, far away.... JOSU SAMA">
+
+<div class="controls">
+  <button id="engage" type="button">&#9654; ENGAGE AUDIO &amp; REPLAY</button>
+  <button id="stop" type="button" hidden>&#9632; CUT AUDIO</button>
+</div>
+
+<p class="hint" id="hint">The crawl loops every 76 seconds.</p>
+
+<a href="https://github.com/joshuel09">&#10217; RETURN TO PROFILE</a>
+
+<script>
+  var crawl  = document.getElementById('crawl');
+  var engage = document.getElementById('engage');
+  var stop   = document.getElementById('stop');
+  var hint   = document.getElementById('hint');
+  var VIDEO  = '_D0ZQPqeJkk';
+  var frame  = null;
+
+  // Re-fetching the SVG restarts its CSS animations, so the music and the
+  // crawl begin on the same beat.
+  function restartCrawl() {
+    crawl.src = 'assets/hero.svg?t=' + Date.now();
+  }
+
+  function cutAudio() {
+    if (frame) { frame.remove(); frame = null; }
+    stop.hidden = true;
+  }
+
+  engage.addEventListener('click', function () {
+    cutAudio();
+    // Built on a real click, so autoplay-with-sound is permitted.
+    frame = document.createElement('iframe');
+    frame.id = 'bgm';
+    frame.allow = 'autoplay';
+    frame.src = 'https://www.youtube.com/embed/' + VIDEO +
+                '?autoplay=1&loop=1&playlist=' + VIDEO;
+    document.body.appendChild(frame);
+    stop.hidden = false;
+    hint.textContent = 'If you hear nothing, the track may be blocked from embedding.';
+    restartCrawl();
+  });
+
+  stop.addEventListener('click', cutAudio);
+</script>
+
+</body>
+</html>
