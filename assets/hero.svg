@@ -342,8 +342,8 @@
     .space { opacity:0; animation:space 76.0s linear infinite both }
     .sky   { animation:drift 90s linear infinite }
     .intro { opacity:0; animation:intro 76.0s linear infinite both;
-              font:700 23px 'Franklin Gothic Medium','Arial Narrow',Arial,sans-serif;
-              fill:#4BD5EE; letter-spacing:2.5px }
+              font:700 46px 'Franklin Gothic Medium','Arial Narrow',Arial,sans-serif;
+              fill:#4BD5EE; letter-spacing:3px }
     .logo  { opacity:1; transform:translate(500px,285px) scale(1.45);
               animation:logo 76.0s linear infinite both }
     .sub   { font:700 17px 'Franklin Gothic Medium','Arial Narrow',Arial,sans-serif;
@@ -683,8 +683,8 @@
   </g>
 
   <g class="intro">
-    <text x="120" y="248">A long time ago, in a repository</text>
-    <text x="120" y="288">far, far away....</text>
+    <text x="171" y="248">A long time ago, in a repository</text>
+    <text x="171" y="312">far, far away....</text>
   </g>
 
   <g class="logo">

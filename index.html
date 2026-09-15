@@ -54,14 +54,15 @@
 
   // The crawl rolls immediately. The fanfare must land on the JOSU SAMA logo,
   // which the SVG brings up at 6.1s -- and this upload has ~1s of silence at the
-  // head, so playback starts at 5s and the first note arrives right on the logo.
-  var AUDIO_DELAY = 5000;
+  // head, so playback starts at 4s and the first note arrives right on the logo.
+  var AUDIO_DELAY = 4000;
+  var CYCLE = 76000;   // hero.svg's own loop length -- re-roll in lockstep with it
 
   var crawl  = document.getElementById('crawl');
   var engage = document.getElementById('engage');
   var replay = document.getElementById('replay');
   var hint   = document.getElementById('hint');
-  var player = null, audioTimer = null;
+  var player = null, audioTimer = null, loopTimer = null;
 
   function cueAudio() {
     clearTimeout(audioTimer);
@@ -74,10 +75,18 @@
   }
 
   // Re-fetching the SVG restarts its CSS animations.
-  function start() {
+  function roll() {
     crawl.src = 'assets/hero.svg?t=' + Date.now();
-    hint.textContent = 'The crawl loops every 76 seconds.';
     cueAudio();
+  }
+
+  // Drive the loop from here rather than leaning on the SVG's internal repeat,
+  // so the music restarts with the same offset on every pass.
+  function start() {
+    clearInterval(loopTimer);
+    roll();
+    hint.textContent = 'The crawl loops every 76 seconds.';
+    loopTimer = setInterval(roll, CYCLE);
   }
 
   var tag = document.createElement('script');
