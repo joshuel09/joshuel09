@@ -191,9 +191,20 @@
   }
 
   // Re-fetching the SVG restarts its CSS animations.
-  function roll() {
-    crawl.src = heroSrc();
+  // The SVG only starts animating once it has loaded, and each loop forces a
+  // fresh fetch. Cueing in this tick made the music land early on loops, by
+  // exactly the download time. Cue from the load event so the offset is
+  // measured from when the artwork actually starts.
+  var pendingCue = false;
+  crawl.addEventListener('load', function () {
+    if (!pendingCue) return;
+    pendingCue = false;
     cueAudio();
+  });
+
+  function roll() {
+    pendingCue = true;
+    crawl.src = heroSrc();
   }
 
   // Everything hangs off this one clock, so the fade lands exactly on the re-roll.
