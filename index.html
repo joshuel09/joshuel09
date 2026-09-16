@@ -123,6 +123,10 @@
   var AUDIO_DELAY = 5000;
   var CYCLE = 76000;   // hero.svg's own loop length -- re-roll in lockstep
   var FADE  = 3000;    // ramp to silence across the last 3s of each cycle
+  // First play buffers the stream before any sound emerges; on a loop the
+  // player is warm and seekTo(0) resumes instantly. That missing startup
+  // latency is why loops came in early, so add it back for loops only.
+  var LOOP_EXTRA = 700;
 
   var crawl  = document.getElementById('crawl');
   var engage = document.getElementById('engage');
@@ -130,6 +134,7 @@
   var hint   = document.getElementById('hint');
   var bar    = document.getElementById('bar');
   var player = null, audioTimer = null, loopTimer = null, unlocked = false;
+  var firstCue = true;
 
   // A landscape crawl is a thin strip on a phone, so portrait viewports get
   // their own taller artwork with the copy rewrapped to shorter lines.
@@ -181,12 +186,14 @@
     clearTimeout(fadeTimer);
     clearInterval(fadeStep);
     if (player) { try { player.pauseVideo(); } catch (err) {} }
+    var wait = AUDIO_DELAY + (firstCue ? 0 : LOOP_EXTRA);
+    firstCue = false;
     audioTimer = setTimeout(function () {
       if (!player) return;
       setVol(100);
       player.seekTo(0);
       player.playVideo();
-    }, AUDIO_DELAY);
+    }, wait);
     fadeTimer = setTimeout(fadeOut, CYCLE - FADE);
   }
 
