@@ -15,7 +15,7 @@
 
 [![HoloNet](https://komarev.com/ghpvc/?username=joshuel09&label=HOLONET+SCANS&color=1f6feb&style=for-the-badge)](https://github.com/joshuel09)
 [![Alliance](https://img.shields.io/github/followers/joshuel09?label=REBEL+ALLIANCE&style=for-the-badge&color=c1121f&logo=github)](https://github.com/joshuel09?tab=followers)
-[![Kyber](https://img.shields.io/github/stars/joshuel09?label=KYBER+CRYSTALS&style=for-the-badge&color=f59e0b&logo=github)](https://github.com/joshuel09?tab=repositories)
+[![Kyber](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fapi.github.com%2Fusers%2Fjoshuel09&query=%24.public_repos&label=KYBER+CRYSTALS&style=for-the-badge&color=f59e0b&logo=github)](https://github.com/joshuel09?tab=repositories)
 
 </div>
 
