@@ -42,7 +42,7 @@ func main() {
 		Sabers:    []string{"Go", "TypeScript", "Next.js", "React", "Python", "PostgreSQL"},
 		Creed:     "Ship systems that outlive their hype cycle.",
 	}
-	me.Ignite() // ⚔️
+	me.Ignite() // snap-hiss
 }
 
 // 「 やってみる、ではない。やるか、やらぬかだ。 」
@@ -68,7 +68,7 @@ func main() {
   <img width="100%" src="assets/divider-red.svg" alt="" />
 </picture>
 
-## ✦ ⚔️ `// JEDI_ARSENAL`
+## ✦ <img src="assets/sabers-clash.svg" height="28" alt="crossed lightsabers" /> `// JEDI_ARSENAL`
 
 <div align="center">
 

@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="50" viewBox="0 0 64 50" role="img" aria-label="two lightsabers duelling">
+  <title>lightsaber duel</title>
+  <defs>
+    <linearGradient id="halL" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#4BD5EE" stop-opacity="0"/><stop offset="50%" stop-color="#4BD5EE" stop-opacity=".62"/><stop offset="100%" stop-color="#4BD5EE" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="halR" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#FF3B3B" stop-opacity="0"/><stop offset="50%" stop-color="#FF3B3B" stop-opacity=".62"/><stop offset="100%" stop-color="#FF3B3B" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="mtl" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#6f7884"/><stop offset="30%" stop-color="#eef2f7"/>
+      <stop offset="62%" stop-color="#9aa4b1"/><stop offset="100%" stop-color="#2b313a"/>
+    </linearGradient>
+    <radialGradient id="flare">
+      <stop offset="0%" stop-color="#fff" stop-opacity="1"/><stop offset="35%" stop-color="#ffe9a8" stop-opacity=".85"/>
+      <stop offset="100%" stop-color="#ffb347" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <style>
+    .sa { transform-box: view-box; transform-origin: 0 0; }
+    .L { animation: fightL 2.6s cubic-bezier(.35,0,.25,1) infinite; }
+    .R { animation: fightR 2.6s cubic-bezier(.35,0,.25,1) infinite; }
+    .coreb { animation: hc .11s ease-in-out infinite alternate; }
+    .bodyb { animation: hb .16s ease-in-out infinite alternate; }
+    .hit { opacity: 0; transform-box: view-box; animation: 2.6s linear infinite; }
+    .spk circle { transform-box: view-box; animation: 2.6s linear infinite; }
+    .jolt { transform-box: view-box; animation: jolt 2.6s linear infinite; }
+    @keyframes fightL { 0% { transform: translate(0px,0px) rotate(46deg) } 6% { transform: translate(-2px,1px) rotate(56deg) } 13% { transform: translate(1px,-1px) rotate(38deg) } 17% { transform: translate(2px,-1px) rotate(36deg) } 23% { transform: translate(-2px,2px) rotate(50deg) } 31% { transform: translate(-1px,1px) rotate(58deg) } 38% { transform: translate(1px,1px) rotate(52deg) } 42% { transform: translate(2px,1px) rotate(50deg) } 48% { transform: translate(2px,-2px) rotate(38deg) } 57% { transform: translate(-1px,-1px) rotate(34deg) } 65% { transform: translate(1px,0px) rotate(46deg) } 69% { transform: translate(1px,0px) rotate(44deg) } 76% { transform: translate(-2px,1px) rotate(56deg) } 88% { transform: translate(1px,-1px) rotate(40deg) } 100% { transform: translate(0px,0px) rotate(46deg) } }
+    @keyframes fightR { 0% { transform: translate(0px,0px) rotate(-46deg) } 6% { transform: translate(2px,1px) rotate(-36deg) } 13% { transform: translate(-1px,-1px) rotate(-38deg) } 17% { transform: translate(-2px,-1px) rotate(-36deg) } 23% { transform: translate(2px,2px) rotate(-54deg) } 31% { transform: translate(1px,0px) rotate(-36deg) } 38% { transform: translate(-1px,1px) rotate(-52deg) } 42% { transform: translate(-2px,1px) rotate(-50deg) } 48% { transform: translate(-2px,1px) rotate(-58deg) } 57% { transform: translate(1px,1px) rotate(-56deg) } 65% { transform: translate(-1px,0px) rotate(-46deg) } 69% { transform: translate(-1px,0px) rotate(-44deg) } 76% { transform: translate(2px,1px) rotate(-36deg) } 88% { transform: translate(-1px,1px) rotate(-52deg) } 100% { transform: translate(0px,0px) rotate(-46deg) } }
+    @keyframes jolt { 0% { transform: translate(0px,0px) } 12.5% { transform: translate(0px,0px) } 13.8% { transform: translate(-0.6px,0.4px) } 16.5% { transform: translate(0px,0px) } 37.5% { transform: translate(0px,0px) } 38.8% { transform: translate(-0.7px,0.3px) } 41.5% { transform: translate(0px,0px) } 64.5% { transform: translate(0px,0px) } 65.8% { transform: translate(-0.7px,-0.1px) } 68.5% { transform: translate(0px,0px) } 100% { transform: translate(0px,0px) } }
+    @keyframes hc { from{opacity:.84} to{opacity:1} }
+    @keyframes hb { from{opacity:.72} to{opacity:.98} }
+    @keyframes hit0 { 0%,11.5% { opacity:0; transform:scale(.35) } 14.0% { opacity:1; transform:scale(1.15) } 20.0% { opacity:0; transform:scale(1.7) } 100% { opacity:0 } }
+    @keyframes spk0 { 0%,11.5% { opacity:0; transform:scale(.2) } 14.0% { opacity:1 } 22.0% { opacity:0; transform:scale(2.6) } 100% { opacity:0 } }
+    @keyframes hit1 { 0%,36.5% { opacity:0; transform:scale(.35) } 39.0% { opacity:1; transform:scale(1.15) } 45.0% { opacity:0; transform:scale(1.7) } 100% { opacity:0 } }
+    @keyframes spk1 { 0%,36.5% { opacity:0; transform:scale(.2) } 39.0% { opacity:1 } 47.0% { opacity:0; transform:scale(2.6) } 100% { opacity:0 } }
+    @keyframes hit2 { 0%,63.5% { opacity:0; transform:scale(.35) } 66.0% { opacity:1; transform:scale(1.15) } 72.0% { opacity:0; transform:scale(1.7) } 100% { opacity:0 } }
+    @keyframes spk2 { 0%,63.5% { opacity:0; transform:scale(.2) } 66.0% { opacity:1 } 74.0% { opacity:0; transform:scale(2.6) } 100% { opacity:0 } }
+    .h0 { animation-name: hit0; } .h0 .spk circle { animation-name: spk0; }
+    .h1 { animation-name: hit1; } .h1 .spk circle { animation-name: spk1; }
+    .h2 { animation-name: hit2; } .h2 .spk circle { animation-name: spk2; }
+    @media (prefers-reduced-motion: reduce) {
+      .L,.R,.coreb,.bodyb,.hit,.spk circle,.jolt { animation: none; }
+      .L { transform: rotate(46deg); } .R { transform: rotate(-46deg); }
+      .hit { opacity: 0; } .jolt { transform: none; }
+    }
+  </style>
+  <g class="jolt">
+    <g transform="translate(9.0,47.0)"><g class="sa L">
+    <rect x="-4.6" y="-49.0" width="9.2" height="38.0" fill="url(#halL)"/>
+    <rect class="bodyb" x="-2.3" y="-49.0" width="4.6" height="38.0" rx="2.3" fill="#4BD5EE" opacity=".92"/>
+    <rect class="coreb" x="-1.05" y="-49.0" width="2.1" height="38.0" rx="1.05" fill="#fff"/>
+    <rect x="-3.5" y="-11.0" width="7.0" height="11.0" rx="1.6" fill="url(#mtl)"/>
+    <rect x="-3.5" y="-6.8" width="7.0" height="3.7" fill="#0a0d12" opacity=".9"/>
+    <rect x="-3.5" y="-11.0" width="7.0" height="1.2" rx=".6" fill="#fff" opacity=".45"/>
+    <circle cx="0" cy="-9.5" r="1.15" fill="#d93025"/>
+  </g></g>
+    <g transform="translate(55.0,47.0)"><g class="sa R">
+    <rect x="-4.6" y="-49.0" width="9.2" height="38.0" fill="url(#halR)"/>
+    <rect class="bodyb" x="-2.3" y="-49.0" width="4.6" height="38.0" rx="2.3" fill="#FF3B3B" opacity=".92"/>
+    <rect class="coreb" x="-1.05" y="-49.0" width="2.1" height="38.0" rx="1.05" fill="#fff"/>
+    <rect x="-3.5" y="-11.0" width="7.0" height="11.0" rx="1.6" fill="url(#mtl)"/>
+    <rect x="-3.5" y="-6.8" width="7.0" height="3.7" fill="#0a0d12" opacity=".9"/>
+    <rect x="-3.5" y="-11.0" width="7.0" height="1.2" rx=".6" fill="#fff" opacity=".45"/>
+    <circle cx="0" cy="-9.5" r="1.15" fill="#d93025"/>
+  </g></g>
+    <g class="hit h0" style="transform-origin:32.0px 17.6px"><circle cx="32.0" cy="17.6" r="12" fill="url(#flare)"/><g class="spk" fill="#fff"><circle cx="31.1" cy="18.5" r="1.24"/><circle cx="31.4" cy="17.7" r="0.97"/><circle cx="26.3" cy="17.8" r="1.00"/><circle cx="37.3" cy="11.1" r="0.74"/><circle cx="24.6" cy="22.5" r="1.05"/><circle cx="23.8" cy="25.3" r="1.27"/><circle cx="34.8" cy="19.4" r="0.63"/><circle cx="23.3" cy="18.0" r="0.55"/></g></g><g class="hit h1" style="transform-origin:32.0px 29.0px"><circle cx="32.0" cy="29.0" r="12" fill="url(#flare)"/><g class="spk" fill="#fff"><circle cx="26.4" cy="24.9" r="0.52"/><circle cx="31.4" cy="28.1" r="1.17"/><circle cx="32.3" cy="31.3" r="0.90"/><circle cx="34.9" cy="28.3" r="0.72"/><circle cx="41.0" cy="37.0" r="1.17"/><circle cx="35.7" cy="26.1" r="0.68"/><circle cx="28.2" cy="22.2" r="1.11"/><circle cx="30.2" cy="34.6" r="0.81"/></g></g><g class="hit h2" style="transform-origin:32.0px 24.8px"><circle cx="32.0" cy="24.8" r="12" fill="url(#flare)"/><g class="spk" fill="#fff"><circle cx="40.2" cy="30.3" r="0.50"/><circle cx="26.8" cy="31.4" r="0.88"/><circle cx="40.6" cy="23.1" r="0.56"/><circle cx="34.3" cy="29.2" r="0.72"/><circle cx="24.6" cy="22.1" r="1.27"/><circle cx="36.6" cy="18.7" r="0.70"/><circle cx="24.8" cy="17.7" r="1.14"/><circle cx="26.2" cy="25.7" r="0.86"/></g></g>
+  </g>
+</svg>
