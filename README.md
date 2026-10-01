@@ -36,7 +36,7 @@ type Jedi struct {
 
 func main() {
 	me := Jedi{
-		Callsign:  "Josusama™",
+		Callsign:  "Josusama",
 		Rank:      "Full-Stack System Engineer · Tech Director",
 		HomeWorld: "🇯🇵 Japan",
 		Sabers:    []string{"Go", "TypeScript", "Next.js", "React", "Python", "PostgreSQL"},
