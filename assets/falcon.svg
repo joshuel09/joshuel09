@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="46" viewBox="0 0 64 46" role="img" aria-label="Millennium Falcon">
+  <title>Millennium Falcon</title>
+  <defs>
+    <linearGradient id="hull" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#e2e7ed"/><stop offset="30%" stop-color="#b3bcc6"/>
+      <stop offset="60%" stop-color="#848d99"/><stop offset="100%" stop-color="#454c56"/>
+    </linearGradient>
+    <linearGradient id="mand" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#d3dae1"/><stop offset="45%" stop-color="#98a1ac"/>
+      <stop offset="100%" stop-color="#4b525c"/>
+    </linearGradient>
+    <radialGradient id="eng">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity=".95"/>
+      <stop offset="30%" stop-color="#c8ecff" stop-opacity=".8"/>
+      <stop offset="62%" stop-color="#6fd0ff" stop-opacity=".42"/>
+      <stop offset="100%" stop-color="#3fbaff" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <style>
+    .ship  { transform-box: view-box; transform-origin: 24px 23px; animation: hover 3.4s ease-in-out infinite; }
+    .eglow { animation: pulse .85s ease-in-out infinite alternate; }
+    .ecore { animation: pulsec .55s ease-in-out infinite alternate; }
+    @keyframes hover  { 0%,100% { transform: translateY(.6px) rotate(1deg) }
+                        50%     { transform: translateY(-1.1px) rotate(-1.6deg) } }
+    @keyframes pulse  { from { opacity:.5 }  to { opacity:1 } }
+    @keyframes pulsec { from { opacity:.75 } to { opacity:1 } }
+    @media (prefers-reduced-motion: reduce) { .ship,.eglow,.ecore { animation: none } }
+  </style>
+  <g class="ship">
+    <!-- sublight engine wash, hugging the aft hull edge -->
+    <ellipse class="eglow" cx="11.5" cy="23" rx="10.5" ry="14" fill="url(#eng)"/>
+
+    <!-- forward mandibles: thick prongs with a wide docking notch between -->
+    <path d="M27 9.8 L55.5 13.6 Q59.4 14.1 59.4 16.4 L59.4 18.6 Q59.4 20.4 56.6 20.2 L30 18.6 Z"
+          fill="url(#mand)" stroke="#333942" stroke-width=".7" stroke-linejoin="round"/>
+    <path d="M27 36.2 L55.5 32.4 Q59.4 31.9 59.4 29.6 L59.4 27.4 Q59.4 25.6 56.6 25.8 L30 27.4 Z"
+          fill="url(#mand)" stroke="#333942" stroke-width=".7" stroke-linejoin="round"/>
+
+    <!-- cockpit boom + pod, offset to starboard -->
+    <path d="M30 32.5 L45.8 36.4" stroke="#6b737e" stroke-width="5.4" stroke-linecap="round" fill="none"/>
+    <path d="M30 31.6 L45.4 35.4" stroke="#b9c1cb" stroke-width="2.2" stroke-linecap="round" fill="none"/>
+    <circle cx="48.2" cy="37" r="4.3" fill="url(#mand)" stroke="#333942" stroke-width=".7"/>
+    <path d="M49.6 34.6 A 4.3 4.3 0 0 1 50.1 38.6 L47.4 37.6 Z" fill="#0e2634"/>
+    <circle cx="48.9" cy="36.3" r="1" fill="#9bdcff" opacity=".9"/>
+
+    <!-- main disc -->
+    <circle cx="24" cy="23" r="16.4" fill="url(#hull)" stroke="#2f353d" stroke-width="1"/>
+    <!-- engine vent across the aft edge -->
+    <path class="ecore" d="M9.3 14.4 A 16.4 16.4 0 0 0 9.3 31.6" fill="none"
+          stroke="#ffffff" stroke-width="2.4" stroke-linecap="round"/>
+    <!-- hull plating -->
+    <circle cx="24" cy="23" r="7.8" fill="none" stroke="#39404a" stroke-width="1.4" opacity=".9"/>
+    <circle cx="24" cy="23" r="3.6" fill="#646c77" stroke="#333942" stroke-width=".9"/>
+    <path d="M24 15.2 L24 9 M31.8 23 L37.5 23 M18.5 28.5 L13.8 33.2 M29.5 28.5 L33.6 32.6 M18.5 17.5 L14.4 13.4"
+          stroke="#3b424b" stroke-width="1" opacity=".75" fill="none"/>
+    <path d="M13.2 15.6 A 16.4 16.4 0 0 1 23.2 7" fill="none" stroke="#eef2f6" stroke-width="1.3" opacity=".45"/>
+    <!-- quad laser turret -->
+    <circle cx="30.4" cy="15.6" r="2.3" fill="#8f98a3" stroke="#333942" stroke-width=".7"/>
+    <path d="M31.9 14.3 L33.9 12.6 M32.6 15.5 L34.8 13.9" stroke="#424a54" stroke-width=".9"/>
+    <!-- sensor dish -->
+    <ellipse cx="17" cy="13.6" rx="3.4" ry="2.1" fill="#c6ced7" stroke="#39404a" stroke-width=".7"/>
+    <ellipse cx="17" cy="13.3" rx="1.2" ry=".7" fill="#707881"/>
+  </g>
+</svg>

@@ -21,7 +21,7 @@
   <img width="100%" src="assets/divider-blue.svg" alt="" />
 </picture>
 
-## ✦ 🛸 `// HOLOCRON_ENTRY`
+## ✦ <img src="assets/falcon.svg" height="28" alt="Millennium Falcon" /> `// HOLOCRON_ENTRY`
 
 ```go
 package main
@@ -49,7 +49,7 @@ func main() {
 // "Do. Or do not. There is no try." — and definitely no `push --force`.
 ```
 
-> `◢◤` **Hey, I'm Josh** — a passionate tech director, engineer and technology enthusiast.
+> <img src="assets/mando-helmet.svg" height="22" alt="Mandalorian helmet" /> **Hey, I'm Josh** — a passionate tech director, engineer and technology enthusiast.
 > I believe in the power of collaboration and open source, and GitHub is my launchpad for
 > sharing projects, ideas and contributions with the developer community.
 > <img src="https://media.giphy.com/media/hvRJCLFzcasrR4ia7z/giphy.gif" width="26" />
@@ -60,7 +60,7 @@ func main() {
 | 🎨 | Self-taught UI/UX designer |
 | 📱 | I build Web Apps, Mobile Apps and internal platforms |
 | 🎓 | Computer Science graduate |
-| 🛸 | Currently engineering full-stack systems in **Japan** |
+| <img src="assets/falcon.svg" height="20" alt="Millennium Falcon" /> | Currently engineering full-stack systems in **Japan** |
 | 🧠 | Deep-diving **Go**, **AI/RAG pipelines** and **distributed systems** |
 
 <picture>
