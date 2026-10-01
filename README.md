@@ -21,7 +21,7 @@
   <img width="100%" src="assets/divider-blue.svg" alt="" />
 </picture>
 
-## <img src="assets/falcon.svg" height="32" alt="Millennium Falcon" align="absmiddle" /> `// HOLOCRON_ENTRY`
+## <img src="assets/falcon.svg" height="32" alt="Millennium Falcon" align="absmiddle" /> `// CREW_MANIFEST`
 
 ```go
 package main
