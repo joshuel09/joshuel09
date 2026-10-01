@@ -9,13 +9,10 @@
 
 [![Engage audio](https://img.shields.io/badge/%E2%96%B6%20ENGAGE%20AUDIO-MAIN%20TITLE%20THEME-FFE81F?style=for-the-badge&labelColor=0b0b12&logo=youtube&logoColor=FF0000)](https://joshuel09.github.io/joshuel09/)
 
-<img src="https://readme-typing-svg.demolab.com?font=Orbitron&weight=700&size=22&pause=900&color=FFE81F&background=000000&center=true&vCenter=true&width=780&lines=%E5%83%95%E3%81%AEGitHub%E3%81%AE%E3%83%AA%E3%83%9D%E3%82%B8%E3%83%88%E3%83%AA%E3%81%B8%E3%82%88%E3%81%86%E3%81%93%E3%81%9D!;THE+FORCE+IS+STRONG+WITH+THIS+REPO;BUILDING+WEB+%2B+MOBILE+%2B+AI+SYSTEMS;MAY+THE+SOURCE+BE+WITH+YOU" alt="Typing SVG" />
-
-<br/>
-
-[![HoloNet](https://komarev.com/ghpvc/?username=joshuel09&label=HOLONET+SCANS&color=1f6feb&style=for-the-badge)](https://github.com/joshuel09)
-[![Alliance](https://img.shields.io/github/followers/joshuel09?label=REBEL+ALLIANCE&style=for-the-badge&color=c1121f&logo=github)](https://github.com/joshuel09?tab=followers)
-[![Starfighters](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fapi.github.com%2Fusers%2Fjoshuel09&query=%24.public_repos&label=STARFIGHTERS&style=for-the-badge&color=f59e0b&logo=github)](https://github.com/joshuel09?tab=repositories)
+<picture>
+  <source media="(max-width: 700px)" srcset="https://raw.githubusercontent.com/joshuel09/joshuel09/main/assets/force-lines-m.svg">
+  <img width="100%" src="assets/force-lines.svg" alt="僕のGitHubのリポジトリへようこそ! / THE FORCE IS STRONG WITH THIS REPO / BUILDING WEB + MOBILE + AI SYSTEMS / MAY THE SOURCE BE WITH YOU" />
+</picture>
 
 </div>
 
