@@ -49,10 +49,10 @@ func main() {
 // "Do. Or do not. There is no try." — and definitely no `push --force`.
 ```
 
-> <img src="assets/mando-helmet.svg" height="22" alt="Mandalorian helmet" /> **Hey, I'm Josh** — a passionate tech director, engineer and technology enthusiast.
+> <img src="assets/mando-helmet.svg" height="22" alt="Mandalorian helmet" /> **Hey, I'm Josh** a passionate tech director, engineer and technology enthusiast.
 > I believe in the power of collaboration and open source, and GitHub is my launchpad for
 > sharing projects, ideas and contributions with the developer community.
-> <img src="https://media.giphy.com/media/hvRJCLFzcasrR4ia7z/giphy.gif" width="26" />
+> <img src="assets/grogu-wave.svg" height="30" alt="Grogu waving" />
 
 | `⟩⟩` | DATAPAD ENTRY |
 |:---:|:---|
