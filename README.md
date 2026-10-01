@@ -21,7 +21,7 @@
   <img width="100%" src="assets/divider-blue.svg" alt="" />
 </picture>
 
-## ✦ <img src="assets/falcon.svg" height="28" alt="Millennium Falcon" /> `// HOLOCRON_ENTRY`
+## <img src="assets/falcon.svg" height="32" alt="Millennium Falcon" align="absmiddle" /> `// HOLOCRON_ENTRY`
 
 ```go
 package main
@@ -49,10 +49,10 @@ func main() {
 // "Do. Or do not. There is no try." — and definitely no `push --force`.
 ```
 
-> <img src="assets/mando-helmet.svg" height="22" alt="Mandalorian helmet" /> **Hey, I'm Josh** a passionate tech director, engineer and technology enthusiast.
+> <img src="assets/mando-helmet.svg" height="22" alt="Mandalorian helmet" align="absmiddle" /> **Hey, I'm Josh** a passionate tech director, engineer and technology enthusiast.
 > I believe in the power of collaboration and open source, and GitHub is my launchpad for
 > sharing projects, ideas and contributions with the developer community.
-> <img src="assets/grogu-wave.svg" height="30" alt="Grogu waving" />
+> <img src="assets/grogu-wave.svg" height="30" alt="Grogu waving" align="absmiddle" />
 
 | `⟩⟩` | DATAPAD ENTRY |
 |:---:|:---|
@@ -60,7 +60,7 @@ func main() {
 | 🎨 | Self-taught UI/UX designer |
 | 📱 | I build Web Apps, Mobile Apps and internal platforms |
 | 🎓 | Computer Science graduate |
-| <img src="assets/falcon.svg" height="20" alt="Millennium Falcon" /> | Currently engineering full-stack systems in **Japan** |
+| <img src="assets/falcon.svg" height="24" alt="Millennium Falcon" align="absmiddle" /> | Currently engineering full-stack systems in **Japan** |
 | 🧠 | Deep-diving **Go**, **AI/RAG pipelines** and **distributed systems** |
 
 <picture>
@@ -68,7 +68,7 @@ func main() {
   <img width="100%" src="assets/divider-red.svg" alt="" />
 </picture>
 
-## ✦ <img src="assets/sabers-clash.svg" height="28" alt="crossed lightsabers" /> `// JEDI_ARSENAL`
+## <img src="assets/sabers-clash.svg" height="28" alt="crossed lightsabers" align="absmiddle" /> `// JEDI_ARSENAL`
 
 <div align="center">
 
