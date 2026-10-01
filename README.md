@@ -56,12 +56,12 @@ func main() {
 
 | `⟩⟩` | DATAPAD ENTRY |
 |:---:|:---|
-| 💻 | Full-stack system engineer — backend, frontend, infra |
-| 🎨 | Self-taught UI/UX designer |
-| 📱 | I build Web Apps, Mobile Apps and internal platforms |
-| 🎓 | Computer Science graduate |
-| <img src="assets/falcon.svg" height="24" alt="Millennium Falcon" align="absmiddle" /> | Currently engineering full-stack systems in **Japan** |
-| 🧠 | Deep-diving **Go**, **AI/RAG pipelines** and **distributed systems** |
+| <img src="assets/astromech.svg" height="24" alt="Astromech droid" align="absmiddle" /> | Full-stack system engineer — backend, frontend, infra |
+| <img src="assets/hologram.svg" height="24" alt="Hologram projector" align="absmiddle" /> | Self-taught UI/UX designer |
+| <img src="assets/datapad.svg" height="24" alt="Datapad" align="absmiddle" /> | I build Web Apps, Mobile Apps and internal platforms |
+| <img src="assets/jedi-crest.svg" height="24" alt="Jedi Order crest" align="absmiddle" /> | Computer Science graduate |
+| <img src="assets/deathstar.svg" height="24" alt="Death Star" align="absmiddle" /> | Currently engineering full-stack systems in **Japan** |
+| <img src="assets/holocron.svg" height="24" alt="Jedi holocron" align="absmiddle" /> | Deep-diving **Go**, **AI/RAG pipelines** and **distributed systems** |
 
 <picture>
   <source media="(max-width: 700px)" srcset="https://raw.githubusercontent.com/joshuel09/joshuel09/main/assets/divider-red-m.svg">
