@@ -14,6 +14,12 @@
       <stop offset="0%" stop-color="#8e97a2"/><stop offset="40%" stop-color="#fbfdff"/>
       <stop offset="100%" stop-color="#79828d"/>
     </linearGradient>
+    <linearGradient id="gl" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#bdeeff" stop-opacity="0"/>
+      <stop offset="45%" stop-color="#e8faff" stop-opacity=".95"/>
+      <stop offset="62%" stop-color="#9fe4ff" stop-opacity=".6"/>
+      <stop offset="100%" stop-color="#9fe4ff" stop-opacity="0"/>
+    </linearGradient>
     <linearGradient id="vis" x1="0" y1="0" x2="0" y2="1">
       <stop offset="0%" stop-color="#14323c"/><stop offset="45%" stop-color="#0a1a21"/>
       <stop offset="100%" stop-color="#04090d"/>
@@ -27,13 +33,13 @@
       <path d="M4.6 38.6 C5.4 46.5 10.5 57.5 20.8 68.2 L22.4 67.6 C17.5 57.5 13.2 46.5 11.2 39.4 Z"/>
       <path d="M52.4 38.6 C51.6 46.5 46.5 57.5 36.2 68.2 L34.6 67.6 C39.5 57.5 43.8 46.5 45.8 39.4 Z"/>
     </g>
-    <clipPath id="vclip"><use href="#visorG"/></clipPath>
+    <clipPath id="vclip"><path d="M6.6 29 L50.4 29 L50.4 31.6 L35.2 38 L21.8 38 L6.6 31.6 Z"/><path d="M21.8 38 L35.2 38 L32 68.4 L31.2 71.2 L25.8 71.2 L25 68.4 Z"/></clipPath>
   </defs>
   <style>
     .h     { transform-box: view-box; transform-origin: 28.5px 64px; animation: tilt 5.2s ease-in-out infinite; }
     .glint { animation: sweep 4.6s cubic-bezier(.5,0,.5,1) infinite; }
     @keyframes tilt  { 0%,100% { transform: rotate(-1.5deg) } 50% { transform: rotate(1.5deg) } }
-    @keyframes sweep { 0%,62% { transform: translateX(-46px) } 86%,100% { transform: translateX(46px) } }
+    @keyframes sweep { 0%,58% { transform: translateX(-12px) } 88%,100% { transform: translateX(74px) } }
     @media (prefers-reduced-motion: reduce) { .h,.glint { animation: none } .glint { opacity: 0 } }
   </style>
   <g class="h">
@@ -56,7 +62,7 @@
     <!-- visor -->
     <use href="#visorG" fill="url(#vis)"/>
     <g clip-path="url(#vclip)">
-      <rect class="glint" x="-12" y="24" width="8" height="52" fill="#9fe8ff" opacity=".42" transform="skewX(-16)"/>
+      <polygon class="glint" points="0,22 15,22 -3,78 -18,78" fill="url(#gl)"/>
     </g>
     <use href="#visorG" fill="none" stroke="#1b2228" stroke-width=".9" stroke-linejoin="round"/>
     <path d="M7.4 28.6 L49.6 28.6" stroke="#e9eff6" stroke-width="1" opacity=".45" stroke-linecap="round"/>
