@@ -1,0 +1,119 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="100" viewBox="0 0 128 100" role="img" aria-label="Grogu waving">
+  <title>Grogu waving</title>
+  <defs>
+    <path id="eyeA" d="M9.6 1.2 C7.6 -4.6 3 -8.4 -2 -8.4 C-6.8 -8.4 -9.4 -4.6 -9.4 0 C-9.4 4.8 -6.4 8.4 -1.6 8.4 C3.4 8.4 7.8 5.2 9.6 1.2 Z"/>
+    <g id="hairs" fill="none" stroke-linecap="round">
+      <path d="M51.4 15.1 C51.1 13.7 51.3 12.8 51.8 12.1"/>
+      <path d="M55.5 13.4 C55.4 12 55.7 11.1 56.2 10.5"/>
+      <path d="M59.9 12.5 C59.9 11.1 60.3 10.2 60.8 9.7"/>
+      <path d="M64.1 12.5 C64.1 11.1 63.8 10.3 63.3 9.8"/>
+      <path d="M68.5 13.4 C68.6 12 68.4 11.1 67.9 10.5"/>
+      <path d="M72.6 15.1 C72.9 13.7 72.8 12.8 72.3 12.1"/>
+    </g>
+    <linearGradient id="gskin" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#a9cd87"/><stop offset="55%" stop-color="#8cb46d"/>
+      <stop offset="100%" stop-color="#6f9455"/>
+    </linearGradient>
+    <linearGradient id="gear" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#9cc47c"/><stop offset="100%" stop-color="#749a59"/>
+    </linearGradient>
+    <linearGradient id="grobe" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#8a5530"/><stop offset="60%" stop-color="#6f4324"/>
+      <stop offset="100%" stop-color="#55331a"/>
+    </linearGradient>
+    <linearGradient id="gpink" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#eec8b6"/><stop offset="55%" stop-color="#dba893"/>
+      <stop offset="100%" stop-color="#c08d78"/>
+    </linearGradient>
+    <linearGradient id="gscarf" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#c08a52"/><stop offset="100%" stop-color="#9a6836"/>
+    </linearGradient>
+  </defs>
+  <style>
+    .ink   { stroke: #141414; stroke-linejoin: round; stroke-linecap: round; }
+    .wave  { transform-box: view-box; transform-origin: 84px 64px; animation: wave .9s ease-in-out infinite; }
+    .hair  { transform-box: view-box; transform-origin: 62px 16px; animation: sway 4.2s ease-in-out infinite; }
+    .blink { transform-box: view-box; transform-origin: 62px 38px; animation: blink 4.6s linear infinite; }
+    .earL  { transform-box: view-box; transform-origin: 40px 33px; animation: eL 3.8s ease-in-out infinite; }
+    .earR  { transform-box: view-box; transform-origin: 88px 33px; animation: eR 3.8s ease-in-out infinite; }
+    @keyframes wave  { 0%,100% { transform: rotate(-11deg) } 50% { transform: rotate(11deg) } }
+    @keyframes sway  { 0%,100% { transform: rotate(-1.8deg) } 50% { transform: rotate(1.8deg) } }
+    @keyframes blink { 0%,93%,100% { transform: scaleY(1) } 95.5%,97% { transform: scaleY(.07) } }
+    @keyframes eL    { 0%,100% { transform: rotate(0deg) } 50% { transform: rotate(-2.5deg) } }
+    @keyframes eR    { 0%,100% { transform: rotate(0deg) } 50% { transform: rotate(2.5deg) } }
+    @media (prefers-reduced-motion: reduce) {
+      .wave,.blink,.earL,.earR,.hair { animation: none } .wave { transform: rotate(6deg) }
+    }
+  </style>
+
+  <!-- ears -->
+  <g class="earL">
+    <path class="ink" d="M41 23 C29 19.5 13 24 3.6 30.6 C1.6 32 2 34.8 4.6 35.8
+             C14.8 39.8 29 44.4 37.6 46 Z" fill="url(#gear)" stroke-width="2.6"/>
+    <path d="M38 27.5 C28.5 25.5 16.5 29 9.5 33.4 C17.5 36.8 28 40.2 35.4 41.6 Z" fill="url(#gpink)" opacity=".92"/>
+  </g>
+  <g class="earR">
+    <path class="ink" d="M87 23 C99 19.5 115 24 124.4 30.6 C126.4 32 126 34.8 123.4 35.8
+             C113.2 39.8 99 44.4 90.4 46 Z" fill="url(#gear)" stroke-width="2.6"/>
+    <path d="M90 27.5 C99.5 25.5 111.5 29 118.5 33.4 C110.5 36.8 100 40.2 92.6 41.6 Z" fill="url(#gpink)" opacity=".92"/>
+  </g>
+
+  <!-- head: wide and low, flatter than tall -->
+  <path class="ink" d="M33.5 36 C33.5 21 45 12.5 62 12.5 C79 12.5 90.5 21 90.5 36
+           C90.5 45 85 52 76.5 55 L47.5 55 C39 52 33.5 45 33.5 36 Z"
+        fill="url(#gskin)" stroke-width="2.8"/>
+
+  <!-- wispy white hairs -->
+  <g class="hair">
+    <use href="#hairs" stroke="#141414" stroke-width="2.1"/>
+    <use href="#hairs" stroke="#f4f7f0" stroke-width="1"/>
+  </g>
+
+  <!-- forehead creases: three stacked brow wrinkles -->
+  <g class="ink" fill="none" stroke-width="1.7" opacity=".9">
+    <path d="M50.8 19.8 Q62 16.1 73.2 19.8"/>
+    <path d="M49.2 24.2 Q62 20.2 74.8 24.2"/>
+    <path d="M50.8 28.5 Q62 24.7 73.2 28.5"/>
+  </g>
+
+  <!-- eyes -->
+  <g class="blink">
+    <use href="#eyeA" transform="translate(47.5,38) rotate(-9)" fill="#121212" stroke="#141414" stroke-width="1.6" stroke-linejoin="round"/>
+    <use href="#eyeA" transform="translate(76.5,38) scale(-1,1) rotate(-9)" fill="#121212" stroke="#141414" stroke-width="1.6" stroke-linejoin="round"/>
+    <circle cx="44.2" cy="33.8" r="3.4" fill="#fff"/>
+    <circle cx="73.2" cy="33.8" r="3.4" fill="#fff"/>
+    <circle cx="50.8" cy="42.8" r="1.5" fill="#fff"/>
+    <circle cx="79.6" cy="42.8" r="1.5" fill="#fff"/>
+  </g>
+
+  <!-- nose + smile -->
+  <path class="ink" d="M59.6 41.4 C60.8 43.4 63.2 43.4 64.4 41.4" fill="none" stroke-width="1.6"/>
+  <path class="ink" d="M58.2 47.6 C60.5 46.7 63.5 46.7 65.8 47.6" fill="none" stroke-width="1.8"/>
+
+  <!-- robe -->
+  <path class="ink" d="M36 62 C38.5 57.5 45 55 51 55.5 L62 62 L73 55.5 C79 55 85.5 57.5 88 62
+           C90.5 70 90 84 88.5 98 L35.5 98 C34 84 33.5 70 36 62 Z"
+        fill="url(#grobe)" stroke-width="2.8"/>
+  <path class="ink" d="M62 62 L62 98" fill="none" stroke-width="2" opacity=".75"/>
+
+  <!-- wrapped collar scarf -->
+  <path class="ink" d="M39.5 52 C45 48.5 53 50.5 58.5 55 L62 62 L65.5 55
+           C71 50.5 79 48.5 84.5 52 C86.5 56 85 62.5 80 64.5 L62 66 L44 64.5
+           C39 62.5 37.5 56 39.5 52 Z"
+        fill="url(#gscarf)" stroke-width="2.6"/>
+
+  <!-- resting hand -->
+  <g transform="translate(38,78) rotate(-152) scale(.78)">
+    <path class="ink" d="M-5.2 1.5 C-6 -2.5 -4.6 -5.5 -2.8 -6.2 C-3.4 -9.4 -0.6 -10.8 0.6 -8.6 C0.9 -11.6 4.2 -12 4.9 -9.2 C5.6 -11.4 8.4 -10.8 8.2 -8 C8.1 -6.2 7.2 -4.6 6.4 -3.6 C7.8 -1.6 7.4 1.8 5.4 3.2 C2.6 5.2 -3.4 4.6 -5.2 1.5 Z" fill="url(#gskin)" stroke-width="2.9"/>
+  </g>
+
+  <!-- waving arm -->
+  <g class="wave">
+    <path d="M81 68 C84 62 89 57 93.5 53.5" fill="none" stroke="#141414" stroke-width="13" stroke-linecap="round"/>
+    <path d="M81 68 C84 62 89 57 93.5 53.5" fill="none" stroke="#6f4324" stroke-width="9" stroke-linecap="round"/>
+    <path d="M82 66.5 C85 61 89.5 56.5 93 53.5" fill="none" stroke="#8a5530" stroke-width="3.4" stroke-linecap="round" opacity=".6"/>
+    <g transform="translate(98.5,48)">
+      <path class="ink" d="M-5.2 1.5 C-6 -2.5 -4.6 -5.5 -2.8 -6.2 C-3.4 -9.4 -0.6 -10.8 0.6 -8.6 C0.9 -11.6 4.2 -12 4.9 -9.2 C5.6 -11.4 8.4 -10.8 8.2 -8 C8.1 -6.2 7.2 -4.6 6.4 -3.6 C7.8 -1.6 7.4 1.8 5.4 3.2 C2.6 5.2 -3.4 4.6 -5.2 1.5 Z" fill="url(#gskin)" stroke-width="2.4"/>
+    </g>
+  </g>
+</svg>
